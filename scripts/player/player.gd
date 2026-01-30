@@ -32,22 +32,13 @@ func _draw():
 func _physics_process(delta: float) -> void:
 	var direction:= Vector2.ZERO
 	
-	if Input.is_key_pressed(KEY_W):
+	if Input.is_action_pressed("Up"):
 		direction[1] -= 1
-	if Input.is_key_pressed(KEY_S):
+	if Input.is_action_pressed("Down"):
 		direction[1] += 1
-	if Input.is_key_pressed(KEY_A):
+	if Input.is_action_pressed("Left"):
 		direction[0] -= 1
-	if Input.is_key_pressed(KEY_D):
-		direction[0] += 1
-	
-	if Input.is_key_pressed(KEY_UP):
-		direction[1] -= 1
-	if Input.is_key_pressed(KEY_DOWN):
-		direction[1] += 1
-	if Input.is_key_pressed(KEY_LEFT):
-		direction[0] -= 1
-	if Input.is_key_pressed(KEY_RIGHT):
+	if Input.is_action_pressed("Right"):
 		direction[0] += 1
 	
 	direction *= PLAYER_SPEED
