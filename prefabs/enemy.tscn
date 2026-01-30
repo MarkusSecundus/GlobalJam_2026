@@ -1,3 +1,25 @@
 [gd_scene format=3 uid="uid://du722lvirlpxx"]
 
-[node name="Enemy" type="Node2D" unique_id=1521140220]
+[ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_6n8dw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfjof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6n8dw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ks3ws"]
+radius = 69.00725
+
+[node name="Enemy" type="Area2D" unique_id=205930285]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=721535337]
+sprite_frames = SubResource("SpriteFrames_yfjof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1176176293]
+shape = SubResource("CircleShape2D_ks3ws")
