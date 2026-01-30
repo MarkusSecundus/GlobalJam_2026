@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cf6kkabslbkhh"]
+
+[ext_resource type="Script" uid="uid://bsunrcmp5c6x1" path="res://scripts/map/infection_point.gd" id="1_0bg5s"]
+[ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_0gl0a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0bg5s"]
+radius = 291.48755
+
+[node name="InfectionPoint" type="Node2D" unique_id=1551551606]
+script = ExtResource("1_0bg5s")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=996346493]
+custom_minimum_size = Vector2(200, 0)
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -73.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1715117606]
+texture = ExtResource("1_0gl0a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1999560846]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=133463886]
+shape = SubResource("CircleShape2D_0bg5s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
