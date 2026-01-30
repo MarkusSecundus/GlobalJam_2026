@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cu1yo7wrtsskt"]
 
+[ext_resource type="Texture2D" uid="uid://d16sb2x7af6pu" path="res://textures/maps/test_map_background.jpg" id="1_42yok"]
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
 
@@ -7,6 +8,21 @@
 size = Vector2(128, 127)
 
 [node name="Node2D" type="Node2D" unique_id=1443862038]
+
+[node name="background_sprite" type="Sprite2D" parent="." unique_id=1365712728]
+scale = Vector2(10.065, 10.065)
+texture = ExtResource("1_42yok")
+
+[node name="background_collision" type="StaticBody2D" parent="." unique_id=209262766]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background_collision" unique_id=888853895]
+polygon = PackedVector2Array(-4097, 424, -4194, 1030, -4107, 1787, -4043, 2150, -3895, 2412, -3682, 2941, -3180, 3178, -2694, 3664, -2236, 4074, -1448, 4294, -706, 4448, -474, 4416, -116, 4460, 132, 4280, 456, 4196, 819, 3977, 1610, 3651, 2375, 3082, 2689, 2552, 2956, 2094, 3260, 1407, 3665, 613, 3637, 452, 3668, 333, 3650, 22, 3593, -389, 3505, -1019, 3417, -2121, 3129, -3019, 3019, -3339, 3009, -3772, 2780, -4014, 2699, -4202, 2410, -4390, 2247, -4604, 1842, -4839, 1233, -4895, 615, -4789, 279, -4795, -239, -4600, -688, -4359, -986, -4261, -1340, -4032, -1692, -3948, -2075, -3537, -2494.9456, -2795.44, -2715, -2240, -2894, -1996, -3073, -1606, -3416, -1169, -5153, -1135, -5111, -5135, 5129, -5114, 5129, 5003, -5067, 5061, -5153, -1135, -3416, -1169, -3864, -363)
+
+[node name="background_collision_island" type="StaticBody2D" parent="." unique_id=206118243]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background_collision_island" unique_id=1772539009]
+position = Vector2(940, -1658)
+polygon = PackedVector2Array(945, -589, 530, -1019, 131, -1196, -395, -1241, -824, -1500, -1127, -1551, -1682, -1270, -1993, -878, -2015, -575, -1697, -471, -1142, -86, -713, 10, -476, 232, -239, 306, -47, 595, 294, 846, 738, 883, 1041, 1187, 1300, 1135, 1411, 883, 1233, 535, 1226, 3)
 
 [node name="Player" parent="." unique_id=477527040 instance=ExtResource("1_pwco0")]
 
@@ -19,8 +35,3 @@ texture = ExtResource("1_b71ab")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=330699348]
 position = Vector2(271, 156.5)
 shape = SubResource("RectangleShape2D_b71ab")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=206118243]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1772539009]
-polygon = PackedVector2Array(-856, 392, -125, 340, 179, 250, 472, -88, 280, -216, 248, 24, 34, 99, -232, 168, -440, 176, -656, 16, -368, -368, 56, -224, 216, -368, 152, -608, 56, -648, -472, -664, -824, -232)
