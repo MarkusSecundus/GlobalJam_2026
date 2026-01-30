@@ -1,28 +1,14 @@
 [gd_scene format=3 uid="uid://cu1yo7wrtsskt"]
 
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
-[ext_resource type="Script" uid="uid://5qbc2p42wl6n" path="res://scripts/player/player.gd" id="2_pwco0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwco0"]
-size = Vector2(126, 127)
+[ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
 
 [node name="Node2D" type="Node2D" unique_id=1443862038]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1919200381]
-gravity_scale = 0.0
-script = ExtResource("2_pwco0")
-
-[node name="Camera2D" type="Camera2D" parent="RigidBody2D" unique_id=384318397]
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=795834462]
-texture = ExtResource("1_b71ab")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1511586947]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_pwco0")
+[node name="Player" parent="." unique_id=477527040 instance=ExtResource("1_pwco0")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=171971044]
 
@@ -33,3 +19,8 @@ texture = ExtResource("1_b71ab")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=330699348]
 position = Vector2(271, 156.5)
 shape = SubResource("RectangleShape2D_b71ab")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=206118243]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1772539009]
+polygon = PackedVector2Array(-856, 392, -125, 340, 179, 250, 472, -88, 280, -216, 248, 24, 34, 99, -232, 168, -440, 176, -656, 16, -368, -368, 56, -224, 216, -368, 152, -608, 56, -648, -472, -664, -824, -232)
