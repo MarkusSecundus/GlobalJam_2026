@@ -32,9 +32,6 @@ func _draw():
 func _physics_process(delta: float) -> void:
 	var direction:= Vector2.ZERO
 	
-	var f : Callable = func(a: int)->void:
-		print(a)
-	
 	if Input.is_key_pressed(KEY_W):
 		direction[1] -= 1
 	if Input.is_key_pressed(KEY_S):
