@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du722lvirlpxx"]
 
-[ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_6n8dw"]
+[ext_resource type="Texture2D" uid="uid://dr2gsp80w8uej" path="res://textures/temp_enemy.png" id="1_6n8dw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yfjof"]
 animations = [{
@@ -14,7 +14,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks3ws"]
-radius = 69.00725
+radius = 104.00481
 
 [node name="Enemy" type="Area2D" unique_id=205930285]
 
