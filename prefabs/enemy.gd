@@ -2,11 +2,11 @@ extends RigidBody2D
 
 var ATTACK_IMPULSE_MAGNITUDE = 1000.0
 var ATTACK_DIR_VARIABILITY = 300.0
-var AGGRO_GAIN_SPEED_SLOW = 1.0/1.75
+var AGGRO_GAIN_SPEED_SLOW = 1.0/2.5
 var AGGRO_GAIN_SPEED_FAST = 1.0/0.67
 var AGGRO_LOSE_SPEED = 1.0 / 2.0
-var AGGRO_COOLDOWN_AFTER_ATTACK = 0.075
-var AGGRO_COOLDOWN_AFTER_HIT = 0.467
+var AGGRO_COOLDOWN_AFTER_ATTACK = 0.1
+var AGGRO_COOLDOWN_AFTER_HIT = 1.67
 
 const RANDOM_MOVE_PERIOD_MIN: float = 0.15
 const RANDOM_MOVE_PERIOD_MAX: float = 2.0
@@ -107,7 +107,7 @@ func _process(delta: float) -> void:
 		aggro_cooldown = AGGRO_COOLDOWN_AFTER_ATTACK
 	
 	if detected_player:
-		random_move_timeout = RANDOM_MOVE_PERIOD_MAX
+		random_move_timeout = RANDOM_MOVE_PERIOD_MIN
 	
 	maybe_do_random_movement(delta)
 
