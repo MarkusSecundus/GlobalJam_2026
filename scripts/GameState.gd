@@ -2,7 +2,7 @@ extends Node
 
 var player_hp: int = 5
 var player_hit_cooldown: float = 0.0
-const PLAYER_HIT_COOLDOWN_SEC = 2.0
+const PLAYER_HIT_COOLDOWN_SEC = 0.5
 
 var player_shape: int = 0  # bitmask of Game.Mask values (see Game.gd)
 

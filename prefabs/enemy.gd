@@ -4,7 +4,8 @@ var ATTACK_IMPULSE = 1000.0
 var ATTACK_DIR_VARIABILITY = 300.0
 var AGGRO_GAIN_SPEED = 1.0
 var AGGRO_LOSE_SPEED = 0.5
-var AGGRO_COOLDOWN_SEC = 0.1
+var AGGRO_COOLDOWN_AFTER_ATTACK = 0.075
+var AGGRO_COOLDOWN_AFTER_HIT = 0.25
 
 # if nonzero = moving towards the player
 var attack_dir: Vector2 = Vector2.ZERO
@@ -42,7 +43,7 @@ func _draw() -> void:
 	var col = lerp(Color.WHITE, Color.DEEP_PINK, aggro_level)
 	if aggro_cooldown > 0.0:
 		col = Color.CORNFLOWER_BLUE
-	draw_arc($PlayerDamageArea.position,
+	draw_arc($PlayerDetectArea.position,
 			$PlayerDetectArea/CollisionShape2D.shape.radius,
 			0, TAU, 32, col)
 	pass
@@ -67,12 +68,7 @@ func _process(delta: float) -> void:
 	if detected_player and aggro_level >= 1.0:
 		attack_dir = (detected_player.global_position - self.position).normalized()
 		aggro_level = 0.0
-		aggro_cooldown = AGGRO_COOLDOWN_SEC
-
-
-func _on_player_damage_area_body_entered(body: Node2D) -> void:
-	if body is Player:
-		GameState.player_hit()
+		aggro_cooldown = AGGRO_COOLDOWN_AFTER_ATTACK
 
 
 func _on_player_detect_area_body_entered(body: Node2D) -> void:
@@ -85,3 +81,9 @@ func _on_player_detect_area_body_entered(body: Node2D) -> void:
 func _on_player_detect_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		detected_player = null
+
+
+func _on_body_entered(body: Node) -> void:
+	if body is Player:
+		aggro_cooldown = AGGRO_COOLDOWN_AFTER_HIT
+		GameState.player_hit()

@@ -15,15 +15,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks3ws"]
-radius = 72.00694
+radius = 79.00633
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6n8dw"]
 radius = 488.12396
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yfjof"]
-radius = 113.216606
-
 [node name="Enemy" type="RigidBody2D" unique_id=829923330]
+contact_monitor = true
+max_contacts_reported = 10
 linear_damp = 1.0
 script = ExtResource("1_yfjof")
 
@@ -39,12 +38,6 @@ shape = SubResource("CircleShape2D_ks3ws")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea" unique_id=418084397]
 shape = SubResource("CircleShape2D_6n8dw")
 
-[node name="PlayerDamageArea" type="Area2D" parent="." unique_id=472458050]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDamageArea" unique_id=969782620]
-shape = SubResource("CircleShape2D_yfjof")
-
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_exited"]
-[connection signal="body_entered" from="PlayerDamageArea" to="." method="_on_player_damage_area_body_entered"]
