@@ -83,6 +83,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameOver_Lbl:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, 88)]
+}
 
 [sub_resource type="Animation" id="Animation_dswlw"]
 resource_name = "death_effect"
@@ -146,6 +158,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.5]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameOver_Lbl:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.7, 0.96666664, 1.2333333, 1.4666667, 1.6666666, 1.8333334, 1.9333333, 2.0333333, 2.1666667, 2.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(96, 88), Vector2(96, 88), Vector2(96, 40), Vector2(96, 88), Vector2(96, 50), Vector2(96, 88), Vector2(96, 60), Vector2(96, 88), Vector2(96, 70), Vector2(96, 88), Vector2(96, 80), Vector2(96, 88)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h4ie6"]
@@ -214,7 +238,7 @@ anchor_bottom = 0.022000002
 offset_left = 96.0
 offset_top = 88.0
 offset_right = -72.0
-offset_bottom = 288.16
+offset_bottom = 288.16055
 pivot_offset_ratio = Vector2(0.5, 0.7)
 theme = SubResource("Theme_dswlw")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
