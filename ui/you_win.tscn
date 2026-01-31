@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_l66it"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_vssy2"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_u6afh"]
+[ext_resource type="Script" uid="uid://dmebdwqya2keo" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="6_7bpu8"]
 
 [sub_resource type="Gradient" id="Gradient_eb1j1"]
 offsets = PackedFloat32Array(0)
@@ -309,6 +310,20 @@ transition = 1
 script = ExtResource("5_u6afh")
 destination_string = "res://maps/test_map.tscn"
 
+[node name="Fn_Ragequit" type="Node" parent="FadeAction" unique_id=1214288527]
+script = ExtResource("3_l66it")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Ragequit" unique_id=227354418]
+script = ExtResource("4_vssy2")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
+
+[node name="Transition" type="Node" parent="FadeAction/Fn_Ragequit" unique_id=1146016971]
+script = ExtResource("6_7bpu8")
+exit_code = 42
+
 [node name="GameOver_Lbl" type="RichTextLabel" parent="." unique_id=282418546]
 modulate = Color(0.84705883, 0.08627451, 0.08627451, 1)
 layout_mode = 1
@@ -318,7 +333,7 @@ anchor_bottom = 0.022000002
 offset_left = 96.0
 offset_top = 88.0
 offset_right = -72.0
-offset_bottom = 288.1606
+offset_bottom = 288.16043
 pivot_offset_ratio = Vector2(0.5, 0.7)
 theme = SubResource("Theme_7bpu8")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -350,8 +365,13 @@ text = "PLAY AGAIN"
 layout_mode = 2
 text = "RETURN TO MAIN MENU"
 
+[node name="Button_quit" type="Button" parent="VBoxContainer" unique_id=331583817]
+layout_mode = 2
+text = "RAGEQUIT ANYWAY"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1377378642]
 libraries/ = SubResource("AnimationLibrary_l66it")
 
 [connection signal="pressed" from="VBoxContainer/Button_restart" to="FadeAction/Fn_Restart" method="run_dialog"]
 [connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]
+[connection signal="pressed" from="VBoxContainer/Button_quit" to="FadeAction/Fn_Ragequit" method="run_dialog"]
