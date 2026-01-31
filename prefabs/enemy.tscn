@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du722lvirlpxx"]
 
 [ext_resource type="Texture2D" uid="uid://dr2gsp80w8uej" path="res://textures/temp_enemy.png" id="1_6n8dw"]
+[ext_resource type="Script" uid="uid://dd00nopoponf4" path="res://prefabs/enemy.gd" id="1_yfjof"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yfjof"]
 animations = [{
@@ -14,12 +15,34 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks3ws"]
-radius = 104.00481
+radius = 47.518417
 
-[node name="Enemy" type="Area2D" unique_id=205930285]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6n8dw"]
+radius = 441.11337
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfjof"]
+radius = 71.0
+
+[node name="Enemy" type="RigidBody2D" unique_id=829923330]
+script = ExtResource("1_yfjof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=721535337]
+scale = Vector2(0.71875, 0.71875)
 sprite_frames = SubResource("SpriteFrames_yfjof")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1176176293]
 shape = SubResource("CircleShape2D_ks3ws")
+metadata/_edit_lock_ = true
+
+[node name="PlayerDetectArea" type="Area2D" parent="." unique_id=187860005]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea" unique_id=418084397]
+shape = SubResource("CircleShape2D_6n8dw")
+
+[node name="PlayerDamageArea" type="Area2D" parent="." unique_id=472458050]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDamageArea" unique_id=969782620]
+shape = SubResource("CircleShape2D_yfjof")
+
+[connection signal="body_entered" from="PlayerDamageArea" to="." method="_on_player_damage_area_body_entered"]
