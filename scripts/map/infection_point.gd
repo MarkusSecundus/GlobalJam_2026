@@ -37,11 +37,17 @@ func _process(delta: float) -> void:
 	if (is_infected):
 		return
 	
+	var color: Color
+	
 	if (is_player_inside):
 		progress_bar.value += (100 * delta) / time_to_infect_sec
+		color = Color.DARK_TURQUOISE
 	else:
 		progress_bar.value -= (100 * delta) / progress_loss_sec
-		
+		color = Color.ORANGE_RED
+	
+	progress_bar.modulate = lerp(progress_bar.modulate, color, sqrt(delta))
+	
 	if progress_bar.value >= 100 and not is_infected:
 		is_infected = true
 		hint_compass.close_infection_points.erase(self)
