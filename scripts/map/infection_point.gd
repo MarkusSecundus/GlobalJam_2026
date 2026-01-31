@@ -15,7 +15,7 @@ var player: Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	InfectionSingleton.infected_point_count += 1
+	GameState.infected_point_count += 1
 	player = get_tree().root.get_node("Node2D/Player")
 	pass # Replace with function body.
 
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		
 	if progress_bar.value >= 100 and not is_infected:
 		is_infected = true
-		InfectionSingleton.infected_points += 1
+		GameState.infected_points += 1
 		progress_bar.hide()
 		infection_sprite.scale.y *= -1
 		# Change sprite here????

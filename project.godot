@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 SoundManager="*uid://blt81tg7f3baf"
 TimeUtils="*uid://bswj41aima2u0"
 GameState="*uid://bxgcmemhfiaef"
-InfectionSingleton="*uid://g5pgbr066nf6"
 Game="*uid://bvslblyu080qh"
 
 [input]
