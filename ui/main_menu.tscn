@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dan82ij8bjudb"]
 
-[ext_resource type="Script" uid="uid://bmgjs27wdvf58" path="res://scripts/ui/main_menu.gd" id="1_t7e0r"]
 [ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="2_rmr83"]
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_8uxxo"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_ei257"]
+[ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_ei257"]
+[ext_resource type="PackedScene" uid="uid://cu1yo7wrtsskt" path="res://maps/test_map.tscn" id="6_p8ri8"]
+[ext_resource type="Script" uid="uid://dmebdwqya2keo" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="7_p8ri8"]
 
 [node name="MainMenu" type="Control" unique_id=1716285209]
 layout_mode = 3
@@ -12,13 +14,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t7e0r")
 
 [node name="Panel" type="ColorRect" parent="." unique_id=1602009339]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 152.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.26330364, 0.07114046, 0.027472045, 1)
@@ -72,5 +77,32 @@ duration_seconds = 1.0
 ease = 1
 transition = 1
 
-[connection signal="button_up" from="VBoxContainer/Button_play" to="." method="_on_button_play_button_up"]
-[connection signal="button_up" from="VBoxContainer/Button_quit" to="." method="_on_button_quit_button_up"]
+[node name="Fn_Play" type="Node" parent="FadeAction" unique_id=656562717]
+script = ExtResource("3_8uxxo")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Play" unique_id=2058926731]
+script = ExtResource("4_ei257")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 0
+transition = 1
+
+[node name="Transition" type="Node" parent="FadeAction/Fn_Play" unique_id=1560784147]
+script = ExtResource("5_ei257")
+destination = ExtResource("6_p8ri8")
+
+[node name="Fn_Quit" type="Node" parent="FadeAction" unique_id=1070196283]
+script = ExtResource("3_8uxxo")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Quit" unique_id=1917422679]
+script = ExtResource("4_ei257")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 0
+transition = 1
+
+[node name="Quit" type="Node" parent="FadeAction/Fn_Quit" unique_id=1232463584]
+script = ExtResource("7_p8ri8")
+
+[connection signal="pressed" from="VBoxContainer/Button_play" to="FadeAction/Fn_Play" method="run_dialog"]
+[connection signal="pressed" from="VBoxContainer/Button_quit" to="FadeAction/Fn_Quit" method="run_dialog"]
