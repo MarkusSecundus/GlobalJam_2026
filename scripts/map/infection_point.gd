@@ -15,11 +15,14 @@ var player: Player
 var hint_compass: Control
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _enter_tree() -> void:
 	GameState.infected_point_count += 1
 	player = NodeUtils.get_descendant_of_type(get_tree().root, Player )
 	hint_compass = get_tree().root.get_node("Node2D/CanvasLayer2/Control")
 	pass # Replace with function body.
+
+func _exit_tree() -> void:
+	GameState.infected_point_count -= 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

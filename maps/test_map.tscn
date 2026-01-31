@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d16sb2x7af6pu" path="res://textures/maps/test_map_background.jpg" id="1_42yok"]
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
+[ext_resource type="PackedScene" uid="uid://c8cg06myd0at6" path="res://prefabs/background.tscn" id="2_tiop4"]
 [ext_resource type="PackedScene" uid="uid://cf6kkabslbkhh" path="res://prefabs/infection_point.tscn" id="4_42yok"]
 [ext_resource type="Script" uid="uid://nmgr3c4axif1" path="res://scripts/map/infection_point_randomizer.gd" id="4_svl6s"]
 [ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
@@ -24,6 +25,8 @@ size = Vector2(128, 127)
 
 [node name="Node2D" type="Node2D" unique_id=1443862038]
 script = ExtResource("1_7wt56")
+
+[node name="Background" parent="." unique_id=2009579252 instance=ExtResource("2_tiop4")]
 
 [node name="load_bearing_node" type="Node2D" parent="." unique_id=1878541658]
 
