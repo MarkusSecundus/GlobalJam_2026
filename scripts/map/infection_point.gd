@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 		var total_infection_points :Array= NodeUtils.get_descendants_of_type(get_tree().root, InfectionPoint)
 		for point_it: InfectionPoint in total_infection_points:
 			if not point_it.is_infected:
-				for ii in (GameState.infected_points + 1):
+				for ii in (min(GameState.infected_points, 2)):
 					var enemy: Node2D = scene.instantiate()
 					enemy.global_position = point_it.global_position
 					get_parent().add_child(enemy)
