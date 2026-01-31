@@ -6,27 +6,33 @@ extends Node2D
 
 var is_player_inside: bool = false
 var is_infected: bool = false
+var is_player_inside_hint: bool = false
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var infection_sprite: Sprite2D = $Sprite2D
 
-var HINT_DISTANCE: int = 1000
-
 var player: Player
+var hint_compass: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.infected_point_count += 1
 	player = NodeUtils.get_descendant_of_type(get_tree().root, Player )
+	hint_compass = get_tree().root.get_node("Node2D/CanvasLayer2/Control")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var player_distance = player.global_position.distance_to(self.global_position)
 	
-	if player_distance < HINT_DISTANCE:
-		#print("amogus")
-		pass
+	if is_player_inside_hint:
+		if hint_compass.number_of_close_infection_points == 1:
+			hint_compass.closest_infection_point_dir = global_position - player.global_position
+			hint_compass.distance_to_closest_infection_point = player_distance
+		else:
+			if player_distance < hint_compass.distance_to_closest_infection_point:
+				hint_compass.closest_infection_point_dir = global_position - player.global_position
+				hint_compass.distance_to_closest_infection_point = player_distance
 	
 	if (is_infected):
 		return
@@ -51,3 +57,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if (body.name == "Player"):
 		is_player_inside = false
+
+func _on_area_2d_hint_body_entered(body: Node2D) -> void:
+	if (body.name == "Player"):
+		hint_compass.close_infection_points.append(self)
+
+
+func _on_area_2d_hint_body_exited(body: Node2D) -> void:
+	if (body.name == "Player"):
+		hint_compass.close_infection_points.erase(self)
