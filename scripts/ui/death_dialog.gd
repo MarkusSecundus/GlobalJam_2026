@@ -1,6 +1,10 @@
 class_name DeathEffect
 extends CanvasItem
 
+@export var do_play_btn:bool:
+	set(_val):
+		do_start()
+
 func _ready() -> void:
 	self.visible = false
 

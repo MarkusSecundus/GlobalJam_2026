@@ -11,7 +11,9 @@ const PLAYER_HIT_COOLDOWN_SEC = 0.5
 var is_player_dead : bool:
 	get: return player_hp <= 0
 
-var player_has_won: bool = false
+var player_has_won: bool:
+	get: return infected_points == infected_point_count
+	set(_val):pass
 
 var player_mask: int = 0  # bitmask of Game.Mask values (see Game.gd)
 
@@ -20,6 +22,8 @@ var infected_points: int = 0:
 	get: return infected_points
 	set(val):
 		infected_points = val
+		if player_has_won:
+			(NodeUtils.get_descendant_of_type(get_tree().root, WinEffect) as WinEffect).do_play()
 		_update_ost()
 
 func _update_ost()->void:
