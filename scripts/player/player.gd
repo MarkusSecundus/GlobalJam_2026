@@ -89,3 +89,4 @@ func _physics_process(delta: float) -> void:
 
 func do_hurth_effect()->void:
 	$Camera2D/AnimationPlayer.play("player_hit_screenshake")
+	$Sounds/BeingHit.play()

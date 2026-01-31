@@ -19,13 +19,22 @@ func start_periodical_play()->void:
 		play()
 		await CoroutineUtils.wait_for_seconds(self, play_period_seconds)
 
+func start_periodical_play_if_not_playing_already()->void:
+	if _current_player && _current_player.playing: return
+	start_periodical_play()
+
 func stop_periodical_play()->void:
 	_periodical_play_id += 1
 
+
+var _is_stopping_periodical_play_immediate : bool = false
 func stop_periodical_play_immediate()->void:
 	stop_periodical_play()
-	if _current_player && _current_player.playing && (TimeUtils.seconds_elapsed < _last_play_timestamp + stream.get_length()):
-		SoundManager.StopPlayGradually(_current_player, immediate_stop_duration_seconds)
+	if _is_stopping_periodical_play_immediate && _current_player && _current_player.playing && (TimeUtils.seconds_elapsed < _last_play_timestamp + stream.get_length()):
+		var tw := SoundManager.StopPlayGradually(_current_player, immediate_stop_duration_seconds)
+		_is_stopping_periodical_play_immediate = true
+		await tw.finished
+		_is_stopping_periodical_play_immediate = false
 
 var _current_player : AudioStreamPlayer;
 var _last_play_timestamp : float = -INF;
@@ -34,3 +43,6 @@ func play()->void:
 		
 	_last_play_timestamp = TimeUtils.seconds_elapsed
 	_current_player = SoundManager.PlaySound(to_play, randf_range(pitch_min, pitch_max) if pitch_min < pitch_max else pitch_min, volume_db)
+
+func stop()->void:
+	pass

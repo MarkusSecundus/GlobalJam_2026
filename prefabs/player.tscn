@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bh5qbxgo7irvm" path="res://textures/hero_moving.png" id="3_u51tk"]
 [ext_resource type="Texture2D" uid="uid://cfjuiuf6v6hjy" path="res://textures/temp_square.png" id="4_ht1c8"]
 [ext_resource type="Texture2D" uid="uid://g14asynakv05" path="res://textures/temp_circle.png" id="5_g2jcq"]
+[ext_resource type="Script" uid="uid://bymsueargorsq" path="res://scripts/util/sound/PlaySound.gd" id="7_u51tk"]
+[ext_resource type="AudioStream" uid="uid://dsdncvavabbbd" path="res://music/sounds/mm_being punched_1.wav" id="8_kbsxf"]
 
 [sub_resource type="Animation" id="Animation_4dohe"]
 length = 0.001
@@ -257,3 +259,11 @@ modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(0, 6)
 scale = Vector2(0.28125, 0.28124997)
 texture = ExtResource("5_g2jcq")
+
+[node name="Sounds" type="Node" parent="." unique_id=1966643828]
+
+[node name="BeingHit" type="Node" parent="Sounds" unique_id=1079996407]
+script = ExtResource("7_u51tk")
+stream = ExtResource("8_kbsxf")
+pitch_min = 0.915
+pitch_max = 1.09

@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bfd831urwqje0" path="res://textures/type_triangle.png" id="3_aivmq"]
 [ext_resource type="Texture2D" uid="uid://bp23m5awjgfqp" path="res://textures/type_square.png" id="4_qnk7q"]
 [ext_resource type="Texture2D" uid="uid://cripm7ucxmj4i" path="res://textures/type_circle.png" id="5_2nw32"]
+[ext_resource type="Script" uid="uid://bymsueargorsq" path="res://scripts/util/sound/PlaySound.gd" id="6_2nw32"]
+[ext_resource type="AudioStream" uid="uid://d4f2kb5mm4dh1" path="res://music/sounds/mm_punch_1.wav" id="7_u6on0"]
+[ext_resource type="AudioStream" uid="uid://ci0nokbq2e8tj" path="res://music/sounds/mm_punch_2.wav" id="8_ikd5g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnk7q"]
 atlas = ExtResource("2_aivmq")
@@ -239,6 +242,14 @@ scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_7ajok")
 autoplay = "default"
 frame_progress = 0.813431
+
+[node name="Sounds" type="Node" parent="." unique_id=321231120]
+
+[node name="Hit" type="Node" parent="Sounds" unique_id=1082630733]
+script = ExtResource("6_2nw32")
+stream_variants = Array[AudioStream]([ExtResource("7_u6on0"), ExtResource("8_ikd5g")])
+pitch_min = 0.7
+pitch_max = 1.15
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]

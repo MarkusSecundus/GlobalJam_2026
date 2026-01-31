@@ -42,12 +42,13 @@ func PlaySound(sound: AudioStream, pitch: float = 1, volume_db: float=0)->AudioS
 	return player
 
 
-func StopPlayGradually(player: AudioStreamPlayer, fadeout_seconds: float)->void:
-	if !player.playing: 
+func StopPlayGradually(player: AudioStreamPlayer, fadeout_seconds: float)->Tween:
+	if ! player.playing: 
 		ErrorUtils.report_error("Calling StopGradually on player '%s' which isn't playing anything"%[player.name])
 	var tw := create_tween()
 	tw.tween_property(player, "volume_db", minReasonableDb, fadeout_seconds)
 	tw.tween_callback(player.stop).set_delay(fadeout_seconds)
+	return tw
 
 var _running_tweens : Array[Tween] = []
 

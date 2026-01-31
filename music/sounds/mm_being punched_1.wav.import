@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dsdncvavabbbd"
+path="res://.godot/imported/mm_being punched_1.wav-79ac9bb5094682e47eb3b219069e1253.sample"
+
+[deps]
+
+source_file="res://music/sounds/mm_being punched_1.wav"
+dest_files=["res://.godot/imported/mm_being punched_1.wav-79ac9bb5094682e47eb3b219069e1253.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

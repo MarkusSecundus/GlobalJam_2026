@@ -43,11 +43,14 @@ func _process(delta: float) -> void:
 	var color: Color
 	
 	if (is_player_inside):
+		
 		progress_bar.value += (100 * delta) / time_to_infect_sec
 		color = Color.DARK_TURQUOISE
+		$Sounds/BeingInfected.start_periodical_play_if_not_playing_already()
 	else:
 		progress_bar.value -= (100 * delta) / progress_loss_sec
 		color = Color.ORANGE_RED
+		$Sounds/BeingInfected.stop_periodical_play_immediate()
 	
 	progress_bar.modulate = lerp(progress_bar.modulate, color, sqrt(delta))
 	

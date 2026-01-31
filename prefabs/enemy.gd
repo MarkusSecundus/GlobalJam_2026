@@ -135,3 +135,4 @@ func _on_body_entered(body: Node) -> void:
 	if body is Player:
 		aggro_cooldown = AGGRO_COOLDOWN_AFTER_HIT
 		GameState.player_hit()
+		$Sounds/Hit.play()

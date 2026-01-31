@@ -34,6 +34,7 @@ position = Vector2(1366, -1318)
 [node name="background_sprite" parent="." unique_id=2023250813 instance=ExtResource("3_tiop4")]
 
 [node name="Player" parent="." unique_id=477527040 instance=ExtResource("1_pwco0")]
+position = Vector2(2264, -3160)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=171971044]
 
