@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	wish_alphas.resize(get_children().size())
 	
 	if close_infection_points.size() == 0:
-		for ii in range(get_children().size()):
+		for ii in get_children().size():
 			wish_alphas[ii] = 0.0
 	else:
 		var center = size / 2
@@ -34,10 +34,10 @@ func _process(delta: float) -> void:
 		var closest_infection_point_dist = closest_infection_point.global_position.distance_to(player.global_position)
 		
 		if (closest_infection_point.global_position.distance_to(player.global_position) < 300):
-			for ii in range(get_children().size()):
+			for ii in get_children().size():
 				wish_alphas[ii] = 0.0
 		else:
-			for ii in range(get_children().size()):
+			for ii in get_children().size():
 				var child_it: TextureRect = get_children()[ii]
 				var angle = closest_infection_point_dir.angle_to(child_it.position - center)
 				
@@ -46,7 +46,13 @@ func _process(delta: float) -> void:
 				else:
 					wish_alphas[ii] = 0.0
 	
-	for ii in range(get_children().size()):
+	for ii in get_children().size():
 		var child_it: TextureRect = get_children()[ii]
+		if wish_alphas[ii] > 0.0:
+			wish_alphas[ii] += sin((Time.get_ticks_msec() + ii * 1234) / 1000.0) / 10
+		
+		wish_alphas[ii] = clamp(wish_alphas[ii], 0, 1)
+		
+		# God this is so stupid
 		child_it.modulate.a = lerp(child_it.modulate.a, wish_alphas[ii], sqrt(delta))
-	
+		child_it.scale.y = 0.4 + sin((Time.get_ticks_msec() + ii * 1234) / 1000.0) / 30

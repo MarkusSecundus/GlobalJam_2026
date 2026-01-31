@@ -78,55 +78,6 @@ detectable_shapes = 5
 position = Vector2(2281, 1458)
 detectable_shapes = 6
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2046567294]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1298574837]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=99937386]
-layout_mode = 1
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 57.0
-offset_bottom = 59.0
-text = "XX/XX Infected
-"
-script = ExtResource("6_k1jtb")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1806612733]
-layout_direction = 3
-layout_mode = 0
-offset_left = -7235.333
-offset_top = 4.9999995
-offset_right = 992.0
-offset_bottom = 517.0
-scale = Vector2(0.12, 0.12)
-script = ExtResource("7_svl6s")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
-layout_mode = 2
-texture = ExtResource("7_pbr4s")
-
-[node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
-script = ExtResource("10_wd2vj")
-default_start = NodePath("Fn_OnStart")
-run_on_start = true
-
-[node name="Fn_OnStart" type="Node" parent="FadeAction" unique_id=1491821669]
-script = ExtResource("11_fpxlb")
-
-[node name="FadeOut" type="Node" parent="FadeAction/Fn_OnStart" unique_id=102818667]
-script = ExtResource("12_u8v7t")
-start_alpha = 1.0
-duration_seconds = 1.0
-ease = 1
-transition = 1
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1889071965]
 
 [node name="Control" type="Control" parent="CanvasLayer2" unique_id=628145795]
@@ -359,6 +310,55 @@ offset_bottom = 619.0
 rotation = -3.224683
 scale = Vector2(0.42411056, 0.46695194)
 texture = ExtResource("9_svl6s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2046567294]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1298574837]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=99937386]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 57.0
+offset_bottom = 59.0
+text = "XX/XX Infected
+"
+script = ExtResource("6_k1jtb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1806612733]
+layout_direction = 3
+layout_mode = 0
+offset_left = -7235.333
+offset_top = 4.9999995
+offset_right = 992.0
+offset_bottom = 517.0
+scale = Vector2(0.12, 0.12)
+script = ExtResource("7_svl6s")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
+layout_mode = 2
+texture = ExtResource("7_pbr4s")
+
+[node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
+script = ExtResource("10_wd2vj")
+default_start = NodePath("Fn_OnStart")
+run_on_start = true
+
+[node name="Fn_OnStart" type="Node" parent="FadeAction" unique_id=1491821669]
+script = ExtResource("11_fpxlb")
+
+[node name="FadeOut" type="Node" parent="FadeAction/Fn_OnStart" unique_id=102818667]
+script = ExtResource("12_u8v7t")
+start_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=2128737819]
 
