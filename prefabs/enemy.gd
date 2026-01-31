@@ -9,6 +9,9 @@ var AGGRO_COOLDOWN_SEC = 0.1
 # if nonzero = moving towards the player
 var attack_dir: Vector2 = Vector2.ZERO
 
+@export_flags("Tri", "Rect", "Circle") # must match Game.gd Mask enum
+var detectable_shapes: int = 0
+
 # 0 to 1.0 - full aggro
 var aggro_level: float = 0.0
 var aggro_cooldown: float = 0.0

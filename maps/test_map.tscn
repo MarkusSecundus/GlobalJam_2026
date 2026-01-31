@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
 [ext_resource type="PackedScene" uid="uid://cf6kkabslbkhh" path="res://prefabs/infection_point.tscn" id="4_42yok"]
-[ext_resource type="PackedScene" path="res://prefabs/enemy.tscn" id="5_cabd0"]
+[ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
 [ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]

@@ -15,28 +15,26 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks3ws"]
-radius = 47.518417
+radius = 72.00694
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6n8dw"]
-radius = 441.11337
+radius = 488.12396
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfjof"]
-radius = 71.0
+radius = 113.216606
 
 [node name="Enemy" type="RigidBody2D" unique_id=829923330]
 linear_damp = 1.0
 script = ExtResource("1_yfjof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=721535337]
-scale = Vector2(0.71875, 0.71875)
+scale = Vector2(1.0078125, 1.0078125)
 sprite_frames = SubResource("SpriteFrames_yfjof")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1176176293]
 shape = SubResource("CircleShape2D_ks3ws")
-metadata/_edit_lock_ = true
 
 [node name="PlayerDetectArea" type="Area2D" parent="." unique_id=187860005]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea" unique_id=418084397]
 shape = SubResource("CircleShape2D_6n8dw")
