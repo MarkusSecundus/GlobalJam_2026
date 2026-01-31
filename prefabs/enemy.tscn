@@ -24,6 +24,7 @@ radius = 441.11337
 radius = 71.0
 
 [node name="Enemy" type="RigidBody2D" unique_id=829923330]
+linear_damp = 1.0
 script = ExtResource("1_yfjof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=721535337]

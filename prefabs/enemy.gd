@@ -15,6 +15,13 @@ func _physics_process(delta: float) -> void:
 	if attack_dir.length_squared() > 0:
 		apply_central_impulse(-self.linear_velocity) # kill any velocity we had
 		apply_central_impulse(1000.0 * attack_dir)
+		
+		if detected_player is RigidBody2D: # paranoid null check
+			# add player velocity for "smartness"
+			# but add additional perpendicular element so that it's not perfect
+			var imp = (detected_player as RigidBody2D).linear_velocity
+			imp += attack_dir.orthogonal() * randf_range(-1.0, 1.0) * 300.0
+			apply_central_impulse(imp)
 		attack_dir = Vector2.ZERO
 	pass
 
