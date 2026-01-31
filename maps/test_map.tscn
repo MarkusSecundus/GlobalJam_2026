@@ -79,21 +79,13 @@ script = ExtResource("6_k1jtb")
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1806612733]
 layout_direction = 3
 layout_mode = 0
-offset_left = -1354.0
+offset_left = -7235.333
 offset_top = 4.9999995
-offset_right = 190.0
+offset_right = 992.0
 offset_bottom = 517.0
 scale = Vector2(0.12, 0.12)
 script = ExtResource("7_svl6s")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
-layout_mode = 2
-texture = ExtResource("7_pbr4s")
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1821974368]
-layout_mode = 2
-texture = ExtResource("7_pbr4s")
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1429617023]
 layout_mode = 2
 texture = ExtResource("7_pbr4s")

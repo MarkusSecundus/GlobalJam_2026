@@ -16,7 +16,7 @@ var player: Player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.infected_point_count += 1
-	player = get_tree().root.get_node("Node2D/Player")
+	player = NodeUtils.get_descendant_of_type(get_tree().root, Player )
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

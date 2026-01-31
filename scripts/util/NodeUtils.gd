@@ -179,6 +179,12 @@ static func instantiate_child_by_type_and_select(parent: Node, type: Variant, na
 	NodeUtils.set_selection([child])
 	return child
 
+static func instantiate_child_by_clone_ingame(parent: Node, prefab: Node)->Node:
+	var ret: Node = prefab.duplicate()
+	parent.add_child(ret)
+	ret.owner = parent.get_tree().root
+	return ret
+
 
 static func try_send_message_to_typed_ancestor(this: Node, ancestor_type, message_name: String, arguments: Array):
 	var parent:Node = NodeUtils.get_ancestor_of_type(this.get_parent(), ancestor_type)
