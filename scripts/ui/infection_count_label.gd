@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = var_to_str(InfectionSingleton.infected_points) + "/" + var_to_str(InfectionSingleton.infected_point_count)
+	text = "%d/%d Infected" % [InfectionSingleton.infected_points, InfectionSingleton.infected_point_count]
 	pass

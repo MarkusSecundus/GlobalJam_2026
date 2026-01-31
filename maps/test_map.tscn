@@ -63,8 +63,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=99937386]
-layout_mode = 0
-offset_top = 7.0
-offset_right = 40.0
-offset_bottom = 30.0
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 57.0
+offset_bottom = 59.0
+text = "XX/XX Infected
+"
 script = ExtResource("6_k1jtb")
