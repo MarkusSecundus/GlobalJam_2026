@@ -42,6 +42,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Right"):
 		direction[0] += 1
 	
+	if direction.length_squared() > 0.01:
+		direction = direction.normalized()
 	direction *= PLAYER_SPEED
 	
 	linear_velocity = linear_velocity.lerp(direction, sqrt(delta))
