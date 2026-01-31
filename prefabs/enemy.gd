@@ -20,7 +20,12 @@ var detected_player: Node2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if !(detectable_shapes & Game.Mask.TRI):
+		$ShapeIndicators/Tri.visible = false
+	if !(detectable_shapes & Game.Mask.SQUARE):
+		$ShapeIndicators/Square.visible = false
+	if !(detectable_shapes & Game.Mask.CIRCLE):
+		$ShapeIndicators/Circle.visible = false
 
 func _physics_process(delta: float) -> void:
 	if attack_dir.length_squared() > 0:
