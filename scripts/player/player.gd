@@ -49,6 +49,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if GameState.is_player_dead:
 		return
+	
+	if GameState.player_has_won:
+		return;
 		
 	var direction:= Vector2.ZERO
 	

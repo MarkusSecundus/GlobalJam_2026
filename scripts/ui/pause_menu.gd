@@ -9,7 +9,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (not GameState.is_player_dead) and Input.is_action_just_pressed("Pause"):
+	if GameState.player_has_won:
+		return
+	
+	if GameState.is_player_dead:
+		return
+	
+	if Input.is_action_just_pressed("Pause"):
 		if get_tree().paused == true:
 			visible = false
 			get_tree().paused = false

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bvd5aq6uq0fjx"]
+
+[ext_resource type="Script" uid="uid://bvgct7brpum6o" path="res://scripts/ui/you_win.gd" id="1_v1xji"]
+[ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="2_7bpu8"]
+[ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_l66it"]
+[ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_vssy2"]
+[ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_u6afh"]
+
+[node name="YouWin" type="Control" unique_id=931655785]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1xji")
+
+[node name="Label" type="Label" parent="." unique_id=1107014417]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 156.0
+offset_right = 78.0
+offset_bottom = 179.0
+grow_horizontal = 2
+text = "YOU WIN GOOD JOB"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2129399313]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_restart" type="Button" parent="VBoxContainer" unique_id=1362020082]
+layout_mode = 2
+text = "PLAY AGAIN"
+
+[node name="Button_return" type="Button" parent="VBoxContainer" unique_id=1347052807]
+layout_mode = 2
+text = "RETURN TO MAIN MENU"
+
+[node name="FadeAction" type="Node" parent="." unique_id=185539047]
+script = ExtResource("2_7bpu8")
+
+[node name="Fn_Return" type="Node" parent="FadeAction" unique_id=511863357]
+script = ExtResource("3_l66it")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Return" unique_id=1757580502]
+script = ExtResource("4_vssy2")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
+
+[node name="Transition" type="Node" parent="FadeAction/Fn_Return" unique_id=1584946079]
+script = ExtResource("5_u6afh")
+destination_string = "res://ui/main_menu.tscn"
+
+[node name="Fn_Restart" type="Node" parent="FadeAction" unique_id=1106229886]
+script = ExtResource("3_l66it")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Restart" unique_id=612670625]
+script = ExtResource("4_vssy2")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
+
+[node name="Transition" type="Node" parent="FadeAction/Fn_Restart" unique_id=300994558]
+script = ExtResource("5_u6afh")
+destination_string = "res://maps/test_map.tscn"
+
+[connection signal="pressed" from="VBoxContainer/Button_restart" to="FadeAction/Fn_Restart" method="run_dialog"]
+[connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]

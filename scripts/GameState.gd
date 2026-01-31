@@ -11,6 +11,8 @@ const PLAYER_HIT_COOLDOWN_SEC = 0.5
 var is_player_dead : bool:
 	get: return player_hp <= 0
 
+var player_has_won: bool = false
+
 var player_mask: int = 0  # bitmask of Game.Mask values (see Game.gd)
 
 var infected_point_count: int = 0
@@ -33,6 +35,9 @@ func find_player()->Player: return NodeUtils.get_descendant_of_type(get_tree().r
 func find_death_effect()->DeathEffect: return NodeUtils.get_descendant_of_type(get_tree().root, DeathEffect) as DeathEffect
 	
 func player_hit() -> void:
+	if player_has_won:
+		return
+	
 	if is_player_dead: 
 		return
 	if player_hit_cooldown > 0.0:

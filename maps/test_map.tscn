@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
 [ext_resource type="PackedScene" uid="uid://bwc1cyl16dnxq" path="res://ui/pause_dialog.tscn" id="15_ad6p3"]
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
+[ext_resource type="PackedScene" uid="uid://bvd5aq6uq0fjx" path="res://ui/you_win.tscn" id="18_6emo8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
@@ -367,6 +368,11 @@ transition = 1
 [node name="CanvasLayer4" type="CanvasLayer" parent="." unique_id=1188345117]
 
 [node name="DeathDialog" parent="CanvasLayer4" unique_id=558535312 instance=ExtResource("16_qnwwd")]
+visible = false
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="." unique_id=272041571]
+
+[node name="YouWin" parent="CanvasLayer5" unique_id=931655785 instance=ExtResource("18_6emo8")]
 visible = false
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
