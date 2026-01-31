@@ -29,12 +29,13 @@ func change_mask(new_mask: int) -> void:
 	
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Mask1"):
-		change_mask(Game.Mask.TRI)
-	if Input.is_action_just_pressed("Mask2"):
-		change_mask(Game.Mask.SQUARE)
-	if Input.is_action_just_pressed("Mask3"):
-		change_mask(Game.Mask.CIRCLE)
+	if !GameState.is_player_dead:
+		if Input.is_action_just_pressed("Mask1"):
+			change_mask(Game.Mask.TRI)
+		if Input.is_action_just_pressed("Mask2"):
+			change_mask(Game.Mask.SQUARE)
+		if Input.is_action_just_pressed("Mask3"):
+			change_mask(Game.Mask.CIRCLE)
 	
 	const SPEED = 1.0/0.5
 	if zoom_t < zoom_t_target:
