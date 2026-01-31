@@ -208,7 +208,7 @@ script = ExtResource("1_yfjof")
 scale = Vector2(1.0078125, 1.0078125)
 sprite_frames = SubResource("SpriteFrames_yfjof")
 autoplay = "default"
-frame_progress = 0.09812221
+frame_progress = 0.6843455
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1176176293]
 shape = SubResource("CircleShape2D_ks3ws")
@@ -222,18 +222,23 @@ shape = SubResource("CircleShape2D_6n8dw")
 
 [node name="Tri" type="AnimatedSprite2D" parent="ShapeIndicators" unique_id=2039064650]
 position = Vector2(0, -34)
+scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_cfq72")
 autoplay = "default"
 
 [node name="Square" type="AnimatedSprite2D" parent="ShapeIndicators" unique_id=1025744116]
-position = Vector2(-32, 24)
+position = Vector2(-34, 15.000002)
+rotation = -0.55769205
+scale = Vector2(1.1875, 1.1875)
 sprite_frames = SubResource("SpriteFrames_r4vfc")
 autoplay = "default"
 
 [node name="Circle" type="AnimatedSprite2D" parent="ShapeIndicators" unique_id=657240448]
-position = Vector2(32, 24)
+position = Vector2(41, 9.000001)
+scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_7ajok")
 autoplay = "default"
+frame_progress = 0.813431
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]

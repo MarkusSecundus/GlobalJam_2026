@@ -211,8 +211,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwco0"]
-size = Vector2(126, 127)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2jcq"]
+radius = 18.0
+height = 137.0
 
 [node name="Player" type="RigidBody2D" unique_id=477527040]
 gravity_scale = 0.0
@@ -225,13 +226,14 @@ zoom = Vector2(0.4, 0.4)
 libraries/ = SubResource("AnimationLibrary_1txc5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019281902]
+position = Vector2(7, 12)
 sprite_frames = SubResource("SpriteFrames_8jxos")
 animation = &"move"
-frame_progress = 0.30197498
+frame_progress = 0.26326013
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=760649630]
 position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_pwco0")
+shape = SubResource("CapsuleShape2D_g2jcq")
 
 [node name="Mask" type="Node2D" parent="." unique_id=758426894]
 
