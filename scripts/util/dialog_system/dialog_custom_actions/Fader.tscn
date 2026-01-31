@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4nlofangeb5d"]
 
-[ext_resource type="Script" path="res://scripts/util/dialog_system/dialog_custom_actions/FaderSingleton.gd" id="1_cgpwj"]
+[ext_resource type="Script" uid="uid://b6mpur0kf6yqe" path="res://scripts/util/dialog_system/dialog_custom_actions/FaderSingleton.gd" id="1_cgpwj"]
 
 [sub_resource type="Gradient" id="Gradient_eb1j1"]
 offsets = PackedFloat32Array(0)
@@ -9,24 +9,12 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_n0ewl"]
 gradient = SubResource("Gradient_eb1j1")
 
-[node name="Fader" type="Control" unique_id=1297533836]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -13736.0
-offset_top = -7512.0
-offset_right = 8640.0
-offset_bottom = 5656.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-mouse_behavior_recursive = 1
-script = ExtResource("1_cgpwj")
+[node name="Fader" type="CanvasLayer" unique_id=532284007]
+layer = 7
 
 [node name="Fader" type="TextureRect" parent="." unique_id=1572047129]
-z_index = 500
-layout_mode = 1
+z_index = 4096
+z_as_relative = false
 anchors_preset = -1
 anchor_right = 1.0090001
 anchor_bottom = 1.0
@@ -36,3 +24,4 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 texture = SubResource("GradientTexture1D_n0ewl")
 expand_mode = 1
+script = ExtResource("1_cgpwj")
