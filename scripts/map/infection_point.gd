@@ -9,13 +9,24 @@ var is_infected: bool = false
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var infection_sprite: Sprite2D = $Sprite2D
 
+var HINT_DISTANCE: int = 1000
+
+var player: Player
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InfectionSingleton.infected_point_count += 1
+	player = get_tree().root.get_node("Node2D/Player")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var player_distance = player.global_position.distance_to(self.global_position)
+	
+	if player_distance < HINT_DISTANCE:
+		#print("amogus")
+		pass
+	
 	if (is_infected):
 		return
 	

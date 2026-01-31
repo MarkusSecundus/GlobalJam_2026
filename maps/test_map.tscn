@@ -40,7 +40,7 @@ position = Vector2(271, 156.5)
 shape = SubResource("RectangleShape2D_b71ab")
 
 [node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
-position = Vector2(1954, -4726)
+position = Vector2(130, -4631)
 
 [node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
 position = Vector2(-812, 4391)
@@ -49,7 +49,7 @@ position = Vector2(-812, 4391)
 position = Vector2(-3992, 84)
 
 [node name="InfectionPoint" parent="." unique_id=929705035 instance=ExtResource("4_42yok")]
-position = Vector2(677, -1310)
+position = Vector2(2152, -438)
 
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
 position = Vector2(499, -375)
