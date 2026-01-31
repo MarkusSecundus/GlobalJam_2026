@@ -22,6 +22,13 @@ TimeUtils="*uid://bswj41aima2u0"
 GameState="*uid://bxgcmemhfiaef"
 Game="*uid://bvslblyu080qh"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [input]
 
 Left={
