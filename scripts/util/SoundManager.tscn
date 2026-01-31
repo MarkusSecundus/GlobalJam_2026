@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bjjwnvcm03eos" path="res://scripts/util/sound/SoundManager.gd" id="1_p1llj"]
 [ext_resource type="Script" uid="uid://b0ata5kuqqdho" path="res://scripts/util/sound/SoundtrackPart.gd" id="1_rupev"]
-[ext_resource type="AudioStream" uid="uid://kjewrfajrf4i" path="res://music/bacteria_phase_1_background_music_mp3.mp3" id="2_wdmey"]
-[ext_resource type="AudioStream" uid="uid://b73dh28ylc0ma" path="res://music/BACTERIA_PHASE_2 - 02.mp3" id="4_ntmmv"]
+[ext_resource type="AudioStream" uid="uid://c8xynnknqh8kg" path="res://music/mm_background_1.ogg" id="2_u1yex"]
+[ext_resource type="AudioStream" uid="uid://3o5asiu7lyxx" path="res://music/mm_background_2.ogg" id="4_8nt0d"]
+[ext_resource type="AudioStream" uid="uid://6pd0l0fp5pa" path="res://music/mm_background_3.ogg" id="5_dgtmq"]
 
 [node name="SoundManager" type="Node" unique_id=249273252]
 script = ExtResource("1_p1llj")
@@ -12,19 +13,21 @@ start_ost_intensity = 0.0
 [node name="SoundtrackLayers" type="Node" parent="." unique_id=895135941]
 
 [node name="Layer0" type="AudioStreamPlayer" parent="SoundtrackLayers" unique_id=1059413645]
-stream = ExtResource("2_wdmey")
+stream = ExtResource("2_u1yex")
 autoplay = true
 script = ExtResource("1_rupev")
-intensity_levels = Array[float]([0.0, -80.0])
+intensity_levels = Array[float]([0.0, 0.0, 0.0])
 
 [node name="Layer1" type="AudioStreamPlayer" parent="SoundtrackLayers" unique_id=1647476343]
-stream = ExtResource("4_ntmmv")
+stream = ExtResource("4_8nt0d")
 autoplay = true
 script = ExtResource("1_rupev")
-intensity_levels = Array[float]([-80.0, 0.0])
+intensity_levels = Array[float]([-80.0, 0.0, 0.0])
 
 [node name="Layer2" type="AudioStreamPlayer" parent="SoundtrackLayers" unique_id=1218862451]
+stream = ExtResource("5_dgtmq")
+autoplay = true
 script = ExtResource("1_rupev")
-intensity_levels = Array[float]([-80.0, -80.0])
+intensity_levels = Array[float]([-80.0, -80.0, 0.0])
 
 [node name="SoundPool" type="Node" parent="." unique_id=1456035305]

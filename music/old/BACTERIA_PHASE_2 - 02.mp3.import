@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b73dh28ylc0ma"
+path="res://.godot/imported/BACTERIA_PHASE_2 - 02.mp3-21489f4218d0cb69c924f82f3e41707b.mp3str"
+
+[deps]
+
+source_file="res://music/old/BACTERIA_PHASE_2 - 02.mp3"
+dest_files=["res://.godot/imported/BACTERIA_PHASE_2 - 02.mp3-21489f4218d0cb69c924f82f3e41707b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

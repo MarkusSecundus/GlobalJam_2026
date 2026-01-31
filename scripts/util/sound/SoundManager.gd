@@ -6,6 +6,10 @@ extends Node
 
 @export var start_ost_intensity : float = -1.0
 
+@export var ost_intensity_setter: int:
+	get: return int(self._current_soundtrack_intensity)
+	set(val): self.SetSoundtrackIntensity(float(val))
+
 @onready var _soundPool :Node= $SoundPool;
 
 
