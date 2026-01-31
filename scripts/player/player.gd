@@ -7,6 +7,8 @@ const PLAYER_SPEED_FAST: float = 670
 var zoom_t = 0.0
 var zoom_t_target = 0.0
 
+var moving_via_input: bool = false
+
 @onready var _anim = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +40,11 @@ func _process(delta: float) -> void:
 			change_mask(Game.Mask.SQUARE)
 		if Input.is_action_just_pressed("Mask3"):
 			change_mask(Game.Mask.CIRCLE)
+		
+		if moving_via_input:
+			_anim.play("move")
+		else:
+			_anim.play("idle")
 	
 	const SPEED = 1.0/0.5
 	if zoom_t < zoom_t_target:
@@ -57,6 +64,7 @@ func _physics_process(delta: float) -> void:
 		
 	var direction:= Vector2.ZERO
 	
+	moving_via_input = false
 	if Input.is_action_pressed("Up"):
 		direction[1] -= 1
 	if Input.is_action_pressed("Down"):
@@ -68,6 +76,7 @@ func _physics_process(delta: float) -> void:
 	
 	if direction.length_squared() > 0.01:
 		direction = direction.normalized()
+		moving_via_input = true
 	
 	if GameState.player_mask == 0:
 		direction *= PLAYER_SPEED_FAST

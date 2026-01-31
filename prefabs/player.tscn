@@ -164,46 +164,46 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_lulei")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_edtk3")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_q2wkl")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_f2e50")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_22xyk")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_r3tw4")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_nmymu")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_gf0v6")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_cv2ms")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_g56qp")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_axxvs")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_ay5dx")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_5loxu")
 }, {
-"duration": 0.4,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_sh7kr")
 }],
 "loop": true,
@@ -227,7 +227,7 @@ libraries/ = SubResource("AnimationLibrary_1txc5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019281902]
 sprite_frames = SubResource("SpriteFrames_8jxos")
 animation = &"move"
-frame_progress = 0.4244755
+frame_progress = 0.30197498
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=760649630]
 position = Vector2(1, 0.5)
