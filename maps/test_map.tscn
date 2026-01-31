@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="10_wd2vj"]
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="11_fpxlb"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
+[ext_resource type="PackedScene" uid="uid://bwc1cyl16dnxq" path="res://ui/pause_dialog.tscn" id="15_ad6p3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
@@ -282,3 +283,7 @@ offset_bottom = 619.0
 rotation = -3.224683
 scale = Vector2(0.42411056, 0.46695194)
 texture = ExtResource("9_svl6s")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1058586376]
+
+[node name="PauseDialog" parent="CanvasLayer3" unique_id=1907803477 instance=ExtResource("15_ad6p3")]
