@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_ei257"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_ei257"]
 [ext_resource type="PackedScene" uid="uid://cu1yo7wrtsskt" path="res://maps/test_map.tscn" id="6_p8ri8"]
-[ext_resource type="Script" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="7_p8ri8"]
+[ext_resource type="Script" uid="uid://dmebdwqya2keo" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="7_p8ri8"]
 
 [node name="MainMenu" type="Control" unique_id=1716285209]
 layout_mode = 3

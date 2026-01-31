@@ -284,6 +284,6 @@ rotation = -3.224683
 scale = Vector2(0.42411056, 0.46695194)
 texture = ExtResource("9_svl6s")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1058586376]
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=2128737819]
 
 [node name="PauseDialog" parent="CanvasLayer3" unique_id=1907803477 instance=ExtResource("15_ad6p3")]
