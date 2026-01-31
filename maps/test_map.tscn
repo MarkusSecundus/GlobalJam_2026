@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cu1yo7wrtsskt"]
 
+[ext_resource type="Script" uid="uid://cvhj2mey2tu7a" path="res://scripts/map.gd" id="1_7wt56"]
 [ext_resource type="Texture2D" uid="uid://d16sb2x7af6pu" path="res://textures/maps/test_map_background.jpg" id="1_42yok"]
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
@@ -21,6 +22,7 @@
 size = Vector2(128, 127)
 
 [node name="Node2D" type="Node2D" unique_id=1443862038]
+script = ExtResource("1_7wt56")
 
 [node name="background_sprite" type="Sprite2D" parent="." unique_id=1365712728]
 scale = Vector2(10.065, 10.065)
@@ -302,3 +304,5 @@ texture = ExtResource("9_svl6s")
 
 [node name="DeathDialog" parent="CanvasLayer4" unique_id=558535312 instance=ExtResource("16_qnwwd")]
 visible = false
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
