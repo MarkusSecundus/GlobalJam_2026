@@ -71,7 +71,8 @@ func _process(delta: float) -> void:
 
 
 func _on_player_damage_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body is Player:
+		GameState.player_hit()
 
 
 func _on_player_detect_area_body_entered(body: Node2D) -> void:
