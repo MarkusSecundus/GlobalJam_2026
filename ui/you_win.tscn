@@ -6,6 +6,254 @@
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_vssy2"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_u6afh"]
 
+[sub_resource type="Gradient" id="Gradient_eb1j1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d4vy0"]
+gradient = SubResource("Gradient_eb1j1")
+
+[sub_resource type="FontVariation" id="FontVariation_h4ie6"]
+variation_transform = Transform2D(1.18, 0.01, 0.285, 1, 0, 0)
+
+[sub_resource type="Theme" id="Theme_7bpu8"]
+default_font = SubResource("FontVariation_h4ie6")
+default_font_size = 64
+
+[sub_resource type="Animation" id="Animation_h4ie6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOver_Lbl:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.84705883, 0.08627451, 0.08627451, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver_Lbl:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fader:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameOver_Lbl:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, 88)]
+}
+
+[sub_resource type="Animation" id="Animation_dswlw"]
+resource_name = "death_effect"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:visible")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1.0666667, 3.7),
+"transitions": PackedFloat32Array(1, 1, 2.1435483),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver_Lbl:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335, 1.5, 2.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.84705883, 0.08627451, 0.08627451, 0), Color(0.85, 0.08500002, 0.08500002, 1), Color(0.9740687, 0.12778196, 0.11663409, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameOver_Lbl:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.074325606),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fader:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameOver_Lbl:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.7, 0.96666664, 1.2333333, 1.4666667, 1.6666666, 1.8333334, 1.9333333, 2.0333333, 2.1666667, 2.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(96, 88), Vector2(96, 88), Vector2(96, 40), Vector2(96, 88), Vector2(96, 50), Vector2(96, 88), Vector2(96, 60), Vector2(96, 88), Vector2(96, 70), Vector2(96, 88), Vector2(96, 80), Vector2(96, 88)]
+}
+
+[sub_resource type="Animation" id="Animation_d4vy0"]
+resource_name = "win_effect"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:visible")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1.0666667, 3.7),
+"transitions": PackedFloat32Array(1, 1, 2.1435483),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver_Lbl:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335, 1.5, 2.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.08500002, 0.7352501, 0.85, 0), Color(0.08500002, 0.60775006, 0.85, 1), Color(0.11640001, 0.74237335, 0.97, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameOver_Lbl:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.074325606),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fader:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameOver_Lbl:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.7, 0.96666664, 1.2333333, 1.4666667, 1.6666666, 1.8333334, 1.9333333, 2.0333333, 2.1666667, 2.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(96, 88), Vector2(96, 88), Vector2(96, 40), Vector2(96, 88), Vector2(96, 50), Vector2(96, 88), Vector2(96, 60), Vector2(96, 88), Vector2(96, 70), Vector2(96, 88), Vector2(96, 80), Vector2(96, 88)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l66it"]
+_data = {
+&"RESET": SubResource("Animation_h4ie6"),
+&"death_effect": SubResource("Animation_dswlw"),
+&"win_effect": SubResource("Animation_d4vy0")
+}
+
 [node name="YouWin" type="Control" unique_id=931655785]
 layout_mode = 3
 anchors_preset = 15
@@ -15,39 +263,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1xji")
 
-[node name="Label" type="Label" parent="." unique_id=1107014417]
+[node name="Fader" type="TextureRect" parent="." unique_id=1198962437]
+modulate = Color(1, 1, 1, 0)
+z_index = 4096
+z_as_relative = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -78.0
-offset_top = 156.0
-offset_right = 78.0
-offset_bottom = 179.0
-grow_horizontal = 2
-text = "YOU WIN GOOD JOB"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2129399313]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button_restart" type="Button" parent="VBoxContainer" unique_id=1362020082]
-layout_mode = 2
-text = "PLAY AGAIN"
-
-[node name="Button_return" type="Button" parent="VBoxContainer" unique_id=1347052807]
-layout_mode = 2
-text = "RETURN TO MAIN MENU"
+anchors_preset = -1
+anchor_right = 1.0090001
+anchor_bottom = 1.0
+offset_right = 0.631958
+focus_behavior_recursive = 1
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = SubResource("GradientTexture1D_d4vy0")
+expand_mode = 1
 
 [node name="FadeAction" type="Node" parent="." unique_id=185539047]
 script = ExtResource("2_7bpu8")
@@ -79,6 +308,50 @@ transition = 1
 [node name="Transition" type="Node" parent="FadeAction/Fn_Restart" unique_id=300994558]
 script = ExtResource("5_u6afh")
 destination_string = "res://maps/test_map.tscn"
+
+[node name="GameOver_Lbl" type="RichTextLabel" parent="." unique_id=282418546]
+modulate = Color(0.84705883, 0.08627451, 0.08627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.022000002
+offset_left = 96.0
+offset_top = 88.0
+offset_right = -72.0
+offset_bottom = 288.1606
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_7bpu8")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+text = "YOU WIN!
+GOOD JOB !!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2129399313]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -33.0
+offset_right = 98.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_restart" type="Button" parent="VBoxContainer" unique_id=1362020082]
+layout_mode = 2
+text = "PLAY AGAIN"
+
+[node name="Button_return" type="Button" parent="VBoxContainer" unique_id=1347052807]
+layout_mode = 2
+text = "RETURN TO MAIN MENU"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1377378642]
+libraries/ = SubResource("AnimationLibrary_l66it")
 
 [connection signal="pressed" from="VBoxContainer/Button_restart" to="FadeAction/Fn_Restart" method="run_dialog"]
 [connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]

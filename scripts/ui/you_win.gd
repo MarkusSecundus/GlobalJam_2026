@@ -1,6 +1,10 @@
 extends Control
 
 
+@export var do_win: bool:
+	set(_val):
+		GameState.infected_point_count = GameState.infected_points
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,4 +16,5 @@ func _process(delta: float) -> void:
 		show()
 		GameState.player_has_won = true
 		print("you win")
+		$AnimationPlayer.play("win_effect")
 	pass
