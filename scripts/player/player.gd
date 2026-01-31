@@ -1,7 +1,8 @@
 class_name Player
 extends RigidBody2D
 
-var PLAYER_SPEED = 500
+const PLAYER_SPEED_SLOW: float = 500
+const PLAYER_SPEED_FAST: float = 670
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,7 +66,12 @@ func _physics_process(delta: float) -> void:
 	
 	if direction.length_squared() > 0.01:
 		direction = direction.normalized()
-	direction *= PLAYER_SPEED
+	
+	
+	if GameState.player_mask == 0:
+		direction *= PLAYER_SPEED_FAST
+	else:
+		direction *= PLAYER_SPEED_SLOW
 	
 	linear_velocity = linear_velocity.lerp(direction, sqrt(delta))
 
