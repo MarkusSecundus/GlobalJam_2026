@@ -1,6 +1,6 @@
 extends Node
 
-@export var total_infection_points_count : int = 4
+@export var total_infection_points_count : int = 5
 
 func _ready() -> void:
 	do_randomize()

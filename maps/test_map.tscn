@@ -49,29 +49,34 @@ shape = SubResource("RectangleShape2D_b71ab")
 script = ExtResource("4_svl6s")
 
 [node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
-visible = false
-position = Vector2(130, -4631)
+position = Vector2(-2884, -4094)
 
 [node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
-visible = false
-position = Vector2(-364, 4401)
+position = Vector2(-704, 3917)
 
 [node name="InfectionPoint2" parent="." unique_id=95096753 instance=ExtResource("4_42yok")]
-visible = false
-position = Vector2(-3992, 84)
+position = Vector2(-4536, 543)
 
 [node name="InfectionPoint" parent="." unique_id=929705035 instance=ExtResource("4_42yok")]
-visible = false
-position = Vector2(2152, -438)
+position = Vector2(4526, 3857)
+
+[node name="InfectionPoint5" parent="." unique_id=2086591364 instance=ExtResource("4_42yok")]
+position = Vector2(2717, -3363)
 
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
-position = Vector2(758, -508)
+position = Vector2(247, -2003)
 
 [node name="Enemy2" parent="." unique_id=2124216792 instance=ExtResource("5_cabd0")]
-position = Vector2(-819, 555)
+position = Vector2(-2631, -304)
 
 [node name="Enemy3" parent="." unique_id=552014090 instance=ExtResource("5_cabd0")]
-position = Vector2(2281, 1458)
+position = Vector2(2420, 970)
+
+[node name="Enemy4" parent="." unique_id=1773387217 instance=ExtResource("5_cabd0")]
+position = Vector2(896, -520)
+
+[node name="Enemy5" parent="." unique_id=745425875 instance=ExtResource("5_cabd0")]
+position = Vector2(-40, 2593)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1889071965]
 
