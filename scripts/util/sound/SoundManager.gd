@@ -4,8 +4,12 @@ extends Node
 @export var soundtrackTransition_seconds : float = 3.0
 @export var minReasonableDb : float = -15.0
 
+@export var start_ost_intensity : float = -1.0
+
 @onready var _soundPool :Node= $SoundPool;
 
+
+var _current_soundtrack_intensity : float = -1.0
 
 const MIN_DB : float= -80.0
 
@@ -13,6 +17,8 @@ var _soundtrackLayers : Array = []
 func _ready():
 	var sl : Array[SoundtrackPart] = []
 	self._soundtrackLayers = NodeUtils.get_children_of_type($SoundtrackLayers, SoundtrackPart, sl) as Array[SoundtrackPart];
+	if start_ost_intensity >= 0.0:
+		SetSoundtrackIntensity(start_ost_intensity, 0.1)
 	
 
 func _get_sound_player()->AudioStreamPlayer:
@@ -46,24 +52,26 @@ func _compute_intensity(decibel_layers: Array[float], intensity_floor: int, inte
 	if intensity_floor+1 >= decibel_layers.size(): return decibel_layers[decibel_layers.size()-1]
 	return lerpf(decibel_layers[intensity_floor], decibel_layers[intensity_floor + 1], intensity_factor)
 
-func SetSoundtrackIntensity(intensity: float)->void:
+func SetSoundtrackIntensity(intensity: float, transition_seconds : float = -1.0)->void:
+	if _current_soundtrack_intensity == intensity: return
+	_current_soundtrack_intensity = intensity
+	
+	if transition_seconds < 0.0: transition_seconds = self.soundtrackTransition_seconds
 	for tw in _running_tweens: tw.stop() 
 	_running_tweens.clear()
 	
 	var intensity_floor := int(floorf(intensity))
 	var intensity_factor := intensity - intensity_floor
 	
-	var i:int = 0
-	while i < _soundtrackLayers.size():
+	for i in _soundtrackLayers.size():
 		var layer : SoundtrackPart= _soundtrackLayers[i]
 		
-		var db := _compute_intensity(layer.decibels, intensity_floor, intensity_factor)
+		var db := _compute_intensity(layer.intensity_levels, intensity_floor, intensity_factor)
 		
 		if layer.volume_db != db:
 			var tw := create_tween()
-			tw.tween_property(layer, "volume_db", db, soundtrackTransition_seconds)
+			tw.tween_property(layer, "volume_db", db, transition_seconds)
 			_running_tweens.append(tw)
-		i+= 1
 		
 func GetSoundtrackLayer(idx: int)->SoundtrackPart:
 	return self._soundtrackLayers[idx]
