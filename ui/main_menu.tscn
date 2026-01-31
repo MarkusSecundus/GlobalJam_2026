@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dan82ij8bjudb"]
+
+[ext_resource type="Script" uid="uid://bmgjs27wdvf58" path="res://scripts/ui/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="2_rmr83"]
+[ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_8uxxo"]
+[ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_ei257"]
+
+[node name="MainMenu" type="Control" unique_id=1716285209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7e0r")
+
+[node name="Panel" type="ColorRect" parent="." unique_id=1602009339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26330364, 0.07114046, 0.027472045, 1)
+
+[node name="Label" type="Label" parent="." unique_id=194020241]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 127.355
+offset_right = 20.0
+offset_bottom = 150.35503
+grow_horizontal = 2
+text = "BACTERIA or not"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2137517215]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -33.0
+offset_right = 23.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_play" type="Button" parent="VBoxContainer" unique_id=1506572283]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Button_quit" type="Button" parent="VBoxContainer" unique_id=1030941410]
+layout_mode = 2
+text = "QUIT"
+
+[node name="FadeAction" type="Node" parent="." unique_id=1665257959 node_paths=PackedStringArray("default_start")]
+script = ExtResource("2_rmr83")
+default_start = NodePath("Fn_OnStart")
+run_on_start = true
+
+[node name="Fn_OnStart" type="Node" parent="FadeAction" unique_id=1588565577]
+script = ExtResource("3_8uxxo")
+
+[node name="FadeOut" type="Node" parent="FadeAction/Fn_OnStart" unique_id=1540935744]
+script = ExtResource("4_ei257")
+start_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
+
+[connection signal="button_up" from="VBoxContainer/Button_play" to="." method="_on_button_play_button_up"]
+[connection signal="button_up" from="VBoxContainer/Button_quit" to="." method="_on_button_quit_button_up"]
