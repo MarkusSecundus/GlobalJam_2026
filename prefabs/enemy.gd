@@ -2,8 +2,9 @@ extends RigidBody2D
 
 var ATTACK_IMPULSE = 1000.0
 var ATTACK_DIR_VARIABILITY = 300.0
-var AGGRO_GAIN_SPEED = 1.0
-var AGGRO_LOSE_SPEED = 0.5
+var AGGRO_GAIN_SPEED_SLOW = 1.0/1.75
+var AGGRO_GAIN_SPEED_FAST = 1.0/0.67
+var AGGRO_LOSE_SPEED = 1.0 / 2.0
 var AGGRO_COOLDOWN_AFTER_ATTACK = 0.075
 var AGGRO_COOLDOWN_AFTER_HIT = 0.467
 
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		if detected_player is RigidBody2D: # paranoid null check
 			# add player velocity for "smartness"
 			# but add additional perpendicular element so that it's not perfect
-			var imp = (detected_player as RigidBody2D).linear_velocity
+			var imp: Vector2 = (detected_player as RigidBody2D).linear_velocity
 			imp += attack_dir.orthogonal() * randf_range(-1.0, 1.0) * ATTACK_DIR_VARIABILITY
 			apply_central_impulse(imp)
 		
@@ -53,6 +54,13 @@ func _draw() -> void:
 			0, TAU, 32, col)
 	pass
 
+func get_aggro_gain_speed() -> float:
+	if GameState.player_mask == 0:
+		return AGGRO_GAIN_SPEED_FAST
+	if detectable_shapes & GameState.player_mask:
+		return AGGRO_GAIN_SPEED_FAST
+	return AGGRO_GAIN_SPEED_SLOW
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var initial_aggro_level = aggro_level
@@ -60,8 +68,9 @@ func _process(delta: float) -> void:
 	if aggro_cooldown > 0:
 		aggro_cooldown = max(0.0, aggro_cooldown - delta)
 	
-	if detected_player and aggro_cooldown == 0.0:
-		aggro_level += AGGRO_GAIN_SPEED * delta
+	if detected_player and aggro_cooldown <= 0.0:
+		aggro_level += get_aggro_gain_speed() * delta
+	
 	else:
 		aggro_level -= AGGRO_LOSE_SPEED * delta
 	aggro_level = clampf(aggro_level, 0.0, 1.0)

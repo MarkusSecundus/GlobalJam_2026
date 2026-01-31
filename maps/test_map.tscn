@@ -65,6 +65,15 @@ position = Vector2(2152, -438)
 
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
 position = Vector2(499, -375)
+detectable_shapes = 1
+
+[node name="Enemy2" parent="." unique_id=2124216792 instance=ExtResource("5_cabd0")]
+position = Vector2(-819, 555)
+detectable_shapes = 5
+
+[node name="Enemy3" parent="." unique_id=552014090 instance=ExtResource("5_cabd0")]
+position = Vector2(2281, 1458)
+detectable_shapes = 6
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2046567294]
 
