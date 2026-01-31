@@ -19,7 +19,6 @@ var random_move_impulse: Vector2 = Vector2.ZERO
 # if nonzero = moving towards the player
 var attack_dir: Vector2 = Vector2.ZERO
 
-@export_flags("Tri", "Rect", "Circle") # must match Game.gd Mask enum
 var detectable_shapes: int = 0
 
 # 0 to 1.0 - full aggro
@@ -29,6 +28,15 @@ var detected_player: Node2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if randi_range(0, GameState.infected_point_count) < GameState.infected_points + 1:
+		detectable_shapes |= Game.Mask.TRI
+	
+	if randi_range(0, GameState.infected_point_count) < GameState.infected_points + 1:
+		detectable_shapes |= Game.Mask.SQUARE
+	
+	if randi_range(0, GameState.infected_point_count) < GameState.infected_points + 1:
+		detectable_shapes |= Game.Mask.CIRCLE
+	
 	if !(detectable_shapes & Game.Mask.TRI):
 		$ShapeIndicators/Tri.visible = false
 	if !(detectable_shapes & Game.Mask.SQUARE):

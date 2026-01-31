@@ -28,7 +28,6 @@ contact_monitor = true
 max_contacts_reported = 10
 linear_damp = 0.8
 script = ExtResource("1_yfjof")
-detectable_shapes = 7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=721535337]
 scale = Vector2(1.0078125, 1.0078125)
