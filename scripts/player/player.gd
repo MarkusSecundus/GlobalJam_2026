@@ -38,7 +38,10 @@ func change_mask(new_mask: int) -> void:
 	else:
 		GameState.player_mask = new_mask
 	
-	print("new mask = ", GameState.player_mask)
+	$Mask/Tri.visible    = GameState.player_mask & Game.Mask.TRI
+	$Mask/Square.visible = GameState.player_mask & Game.Mask.SQUARE
+	$Mask/Circle.visible = GameState.player_mask & Game.Mask.CIRCLE
+	
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Mask1"):
