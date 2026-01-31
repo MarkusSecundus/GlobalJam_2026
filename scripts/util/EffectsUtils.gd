@@ -15,7 +15,7 @@ class TweenWrapper:
 	func create_tween()->Tween:
 		if _tween and _tween.is_running():
 			_tween.kill()
-		var tree := obj.get_tree()
+		var tree := obj#.get_tree()
 		if tree: _tween = tree.create_tween()
 		else: _tween = obj.create_tween()
 		return _tween

@@ -24,6 +24,11 @@ func _on_button_resume_pressed() -> void:
 
 
 func _on_button_return_pressed() -> void:
-	get_tree().paused = false
+	pass
+	#get_tree().paused = false
 	#visible = false
 	#get_tree().change_scene_to_file("res://ui/main_menu.tscn")
+
+
+func _on_transition_the_signal() -> void:
+	get_tree().paused = false

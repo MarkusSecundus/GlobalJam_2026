@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_8mhdj"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_bupjb"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_bupjb"]
+[ext_resource type="Script" uid="uid://bw4p4wxlm5ae8" path="res://scripts/util/dialog_system/simple_actions/DialogActionEmitSignal.gd" id="5_gfs1b"]
 
 [node name="PauseDialog" type="Control" unique_id=1907803477]
 process_mode = 3
@@ -39,6 +40,7 @@ layout_mode = 2
 text = "RETURN TO MAIN MENU"
 
 [node name="FadeAction" type="Node" parent="." unique_id=1436554725]
+process_mode = 3
 script = ExtResource("2_vd0j4")
 
 [node name="Fn_Return" type="Node" parent="FadeAction" unique_id=937284288]
@@ -51,10 +53,13 @@ duration_seconds = 1.0
 ease = 1
 transition = 1
 
-[node name="Transition" type="Node" parent="FadeAction/Fn_Return" unique_id=1631386444]
+[node name="Transition_unpause" type="Node" parent="FadeAction/Fn_Return" unique_id=1631386444]
+script = ExtResource("5_gfs1b")
+
+[node name="Transition2" type="Node" parent="FadeAction/Fn_Return" unique_id=1474394465]
 script = ExtResource("5_bupjb")
 destination_string = "res://ui/main_menu.tscn"
 
 [connection signal="pressed" from="VBoxContainer/Button_resume" to="." method="_on_button_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button_return" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]
+[connection signal="the_signal" from="FadeAction/Fn_Return/Transition_unpause" to="." method="_on_transition_the_signal"]
