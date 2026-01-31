@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
 [ext_resource type="Texture2D" uid="uid://dokmmpvsmlkg6" path="res://textures/heart_full.png" id="7_pbr4s"]
 [ext_resource type="Script" uid="uid://b81iosrxwqejt" path="res://scripts/ui/healt_display.gd" id="7_svl6s"]
+[ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="10_wd2vj"]
+[ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="11_fpxlb"]
+[ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
@@ -96,3 +99,18 @@ script = ExtResource("7_svl6s")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
 layout_mode = 2
 texture = ExtResource("7_pbr4s")
+
+[node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
+script = ExtResource("10_wd2vj")
+default_start = NodePath("Fn_OnStart")
+run_on_start = true
+
+[node name="Fn_OnStart" type="Node" parent="FadeAction" unique_id=1491821669]
+script = ExtResource("11_fpxlb")
+
+[node name="FadeOut" type="Node" parent="FadeAction/Fn_OnStart" unique_id=102818667]
+script = ExtResource("12_u8v7t")
+start_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1

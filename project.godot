@@ -21,6 +21,7 @@ SoundManager="*uid://blt81tg7f3baf"
 TimeUtils="*uid://bswj41aima2u0"
 GameState="*uid://bxgcmemhfiaef"
 Game="*uid://bvslblyu080qh"
+Fader="*uid://b4nlofangeb5d"
 
 [display]
 
