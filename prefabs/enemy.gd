@@ -1,12 +1,20 @@
 extends RigidBody2D
 
-var ATTACK_IMPULSE = 1000.0
+var ATTACK_IMPULSE_MAGNITUDE = 1000.0
 var ATTACK_DIR_VARIABILITY = 300.0
 var AGGRO_GAIN_SPEED_SLOW = 1.0/1.75
 var AGGRO_GAIN_SPEED_FAST = 1.0/0.67
 var AGGRO_LOSE_SPEED = 1.0 / 2.0
 var AGGRO_COOLDOWN_AFTER_ATTACK = 0.075
 var AGGRO_COOLDOWN_AFTER_HIT = 0.467
+
+const RANDOM_MOVE_PERIOD_MIN: float = 0.15
+const RANDOM_MOVE_PERIOD_MAX: float = 2.0
+var random_move_timeout: float = 0.0
+
+const RANDOM_MOVE_MAGNITUDE_MIN: float = 300.0
+const RANDOM_MOVE_MAGNITUDE_MAX: float = 500.0
+var random_move_impulse: Vector2 = Vector2.ZERO
 
 # if nonzero = moving towards the player
 var attack_dir: Vector2 = Vector2.ZERO
@@ -31,7 +39,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if attack_dir.length_squared() > 0:
 		apply_central_impulse(-self.linear_velocity) # kill any velocity we had
-		apply_central_impulse(ATTACK_IMPULSE * attack_dir)
+		apply_central_impulse(ATTACK_IMPULSE_MAGNITUDE * attack_dir)
 		
 		if detected_player is RigidBody2D: # paranoid null check
 			# add player velocity for "smartness"
@@ -43,7 +51,12 @@ func _physics_process(delta: float) -> void:
 		apply_torque_impulse(10000.0)
 		
 		attack_dir = Vector2.ZERO
-	pass
+	
+	if random_move_impulse.length_squared() > 0.0:
+		apply_impulse(random_move_impulse)
+		apply_torque_impulse(-3000.0)
+		random_move_impulse = Vector2.ZERO
+		pass
 
 func _draw() -> void:
 	var col = lerp(Color.WHITE, Color.DEEP_PINK, aggro_level)
@@ -53,6 +66,15 @@ func _draw() -> void:
 			$PlayerDetectArea/CollisionShape2D.shape.radius,
 			0, TAU, 32, col)
 	pass
+
+func maybe_do_random_movement(dt: float) -> void:
+	random_move_timeout -= dt
+	
+	if random_move_timeout <= 0.0:
+		random_move_timeout += randf_range(RANDOM_MOVE_PERIOD_MIN, RANDOM_MOVE_PERIOD_MAX)
+		
+		var dir: Vector2 = (self.linear_velocity.normalized() + 0.95 * Vector2.from_angle(randf_range(0.0, TAU))).normalized()
+		random_move_impulse = randf_range(RANDOM_MOVE_MAGNITUDE_MIN, RANDOM_MOVE_MAGNITUDE_MAX) * dir
 
 func get_aggro_gain_speed() -> float:
 	if GameState.player_mask == 0:
@@ -83,6 +105,11 @@ func _process(delta: float) -> void:
 		attack_dir = (detected_player.global_position - self.position).normalized()
 		aggro_level = 0.0
 		aggro_cooldown = AGGRO_COOLDOWN_AFTER_ATTACK
+	
+	if detected_player:
+		random_move_timeout = RANDOM_MOVE_PERIOD_MAX
+	
+	maybe_do_random_movement(delta)
 
 
 func _on_player_detect_area_body_entered(body: Node2D) -> void:

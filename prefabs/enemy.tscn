@@ -26,7 +26,7 @@ radius = 488.12396
 [node name="Enemy" type="RigidBody2D" unique_id=829923330]
 contact_monitor = true
 max_contacts_reported = 10
-linear_damp = 1.0
+linear_damp = 0.8
 script = ExtResource("1_yfjof")
 detectable_shapes = 7
 
