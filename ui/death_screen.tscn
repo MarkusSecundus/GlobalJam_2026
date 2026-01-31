@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dxl75w7exbnhh"]
+
+[ext_resource type="Script" uid="uid://cwfg7dqqtia5f" path="res://scripts/ui/pause_menu.gd" id="1_dswlw"]
+[ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="2_h4ie6"]
+[ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_ynprq"]
+[ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_usilr"]
+[ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_jqi4p"]
+
+[sub_resource type="Theme" id="Theme_dswlw"]
+default_font_size = 64
+
+[node name="PauseDialog" type="Control" unique_id=1907803477]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dswlw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1599379369]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_return" type="Button" parent="VBoxContainer" unique_id=946639192]
+layout_mode = 2
+text = "RETURN TO MAIN MENU"
+
+[node name="FadeAction" type="Node" parent="." unique_id=1436554725]
+script = ExtResource("2_h4ie6")
+
+[node name="Fn_Return" type="Node" parent="FadeAction" unique_id=937284288]
+script = ExtResource("3_ynprq")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Return" unique_id=275649841]
+script = ExtResource("4_usilr")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
+
+[node name="Transition" type="Node" parent="FadeAction/Fn_Return" unique_id=1631386444]
+script = ExtResource("5_jqi4p")
+destination_string = "res://ui/main_menu.tscn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=459232672]
+modulate = Color(0.84705883, 0.08627451, 0.08627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.006
+anchor_bottom = 0.022000002
+offset_top = 96.0
+offset_right = 0.3199463
+offset_bottom = 296.16
+theme = SubResource("Theme_dswlw")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button_return" to="." method="_on_button_return_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]
