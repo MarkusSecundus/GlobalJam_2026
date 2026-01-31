@@ -223,7 +223,7 @@ text = "PLAY AGAIN"
 
 [node name="Button_return" type="Button" parent="VBoxContainer" unique_id=946639192]
 layout_mode = 2
-text = "RETURN TO MAIN MENU"
+text = "    MAIN MENU    "
 
 [node name="Button_quit" type="Button" parent="VBoxContainer" unique_id=403581975]
 layout_mode = 2

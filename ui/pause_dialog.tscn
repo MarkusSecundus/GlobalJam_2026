@@ -37,7 +37,7 @@ text = "RESUME"
 
 [node name="Button_return" type="Button" parent="VBoxContainer" unique_id=946639192]
 layout_mode = 2
-text = "RETURN TO MAIN MENU"
+text = "    MAIN MENU    "
 
 [node name="FadeAction" type="Node" parent="." unique_id=1436554725]
 process_mode = 3
