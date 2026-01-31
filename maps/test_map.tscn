@@ -9,11 +9,11 @@
 [ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
 [ext_resource type="Texture2D" uid="uid://dokmmpvsmlkg6" path="res://textures/heart_full.png" id="7_pbr4s"]
 [ext_resource type="Script" uid="uid://b81iosrxwqejt" path="res://scripts/ui/healt_display.gd" id="7_svl6s"]
+[ext_resource type="Texture2D" uid="uid://cxy8osagupk7o" path="res://textures/spike.png" id="9_svl6s"]
+[ext_resource type="Script" uid="uid://dm5v3x76rilu4" path="res://scripts/ui/compass.gd" id="9_wd2vj"]
 [ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="10_wd2vj"]
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="11_fpxlb"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
-[ext_resource type="Texture2D" uid="uid://cxy8osagupk7o" path="res://textures/spike.png" id="9_svl6s"]
-[ext_resource type="Script" uid="uid://dm5v3x76rilu4" path="res://scripts/ui/compass.gd" id="9_wd2vj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
@@ -52,9 +52,6 @@ script = ExtResource("4_svl6s")
 
 [node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
 position = Vector2(130, -4631)
-
-[node name="InfectionPoint5" parent="." unique_id=1550388127 instance=ExtResource("4_42yok")]
-position = Vector2(1328, -3392)
 
 [node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
 position = Vector2(-364, 4401)
@@ -117,10 +114,6 @@ duration_seconds = 1.0
 ease = 1
 transition = 1
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1429617023]
-layout_mode = 2
-texture = ExtResource("7_pbr4s")
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1889071965]
 
 [node name="Control" type="Control" parent="CanvasLayer2" unique_id=628145795]
@@ -134,38 +127,39 @@ script = ExtResource("9_wd2vj")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Control" unique_id=582608170]
 layout_mode = 0
-offset_left = 192.99998
-offset_top = 550.0
-offset_right = 273.0
-offset_bottom = 1062.0
+offset_left = 170.0
+offset_top = 612.0
+offset_right = 250.00002
+offset_bottom = 1124.0
+rotation = 0.15087655
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/Control" unique_id=958622880]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 544.0
-offset_right = 602.0
-offset_bottom = 1056.0
+offset_left = 528.00006
+offset_top = 587.0
+offset_right = 608.00006
+offset_bottom = 1099.0
 rotation = -0.10044706
 scale = Vector2(0.3769759, 0.47620493)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer2/Control" unique_id=293245695]
 layout_mode = 0
-offset_left = 936.99994
-offset_top = 544.0
-offset_right = 1016.99994
-offset_bottom = 1056.0
+offset_left = 938.99994
+offset_top = 628.0
+offset_right = 1018.99994
+offset_bottom = 1140.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect4" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1689885965]
 layout_mode = 0
-offset_left = 1068.0
-offset_top = 566.0
-offset_right = 1148.0001
-offset_bottom = 1078.0
+offset_left = 1180.9999
+offset_top = 647.99994
+offset_right = 1261.0
+offset_bottom = 1160.0
 rotation = -0.90449977
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
@@ -182,41 +176,41 @@ texture = ExtResource("9_svl6s")
 
 [node name="TextureRect6" type="TextureRect" parent="CanvasLayer2/Control" unique_id=681473351]
 layout_mode = 0
-offset_left = 661.0
-offset_top = 132.0
-offset_right = 741.0
-offset_bottom = 644.0
+offset_left = 680.0
+offset_top = 108.999985
+offset_right = 760.0
+offset_bottom = 621.0
 rotation = -3.1199386
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect7" type="TextureRect" parent="CanvasLayer2/Control" unique_id=834466367]
 layout_mode = 0
-offset_left = 947.0
-offset_top = 95.000015
-offset_right = 1027.0
-offset_bottom = 607.0
-rotation = -3.1199386
+offset_left = 1046.0
+offset_top = 91.0
+offset_right = 1126.0
+offset_bottom = 603.0
+rotation = -2.8115618
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect8" type="TextureRect" parent="CanvasLayer2/Control" unique_id=81597512]
 layout_mode = 0
-offset_left = 1100.0
-offset_top = 184.99994
-offset_right = 1180.0001
-offset_bottom = 696.99994
+offset_left = 1219.0
+offset_top = 157.99994
+offset_right = 1299.0001
+offset_bottom = 669.99994
 rotation = -2.2610078
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect9" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1611349335]
 layout_mode = 0
-offset_left = 239.99997
-offset_top = 107.0
-offset_right = 319.99997
-offset_bottom = 619.0
-rotation = -3.1199386
+offset_left = 259.0
+offset_top = 96.00001
+offset_right = 339.0
+offset_bottom = 608.0
+rotation = -3.3756123
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
@@ -242,49 +236,49 @@ texture = ExtResource("9_svl6s")
 
 [node name="TextureRect12" type="TextureRect" parent="CanvasLayer2/Control" unique_id=608743536]
 layout_mode = 0
-offset_left = 113.82872
-offset_top = 488.96405
-offset_right = 193.82872
-offset_bottom = 1000.96405
+offset_left = 101.99999
+offset_top = 536.0
+offset_right = 182.0
+offset_bottom = 1048.0
 rotation = -4.969188
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect13" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1554565464]
 layout_mode = 0
-offset_left = 343.0
-offset_top = 525.0
-offset_right = 423.0
-offset_bottom = 1037.0
+offset_left = 362.00003
+offset_top = 597.00006
+offset_right = 442.00003
+offset_bottom = 1109.0
 scale = Vector2(0.37779424, 0.53721344)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect14" type="TextureRect" parent="CanvasLayer2/Control" unique_id=2122046545]
 layout_mode = 0
-offset_left = 719.00006
-offset_top = 520.0
-offset_right = 799.00006
-offset_bottom = 1032.0
+offset_left = 729.0
+offset_top = 573.00006
+offset_right = 809.0
+offset_bottom = 1085.0
 rotation = 0.075626425
 scale = Vector2(0.39637062, 0.51748586)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect15" type="TextureRect" parent="CanvasLayer2/Control" unique_id=60640551]
 layout_mode = 0
-offset_left = 1073.0
-offset_top = 372.00006
-offset_right = 1153.0001
-offset_bottom = 884.00006
+offset_left = 1194.0001
+offset_top = 393.0
+offset_right = 1274.0002
+offset_bottom = 905.0
 rotation = -1.7545583
 scale = Vector2(0.5533368, 0.56100684)
 texture = ExtResource("9_svl6s")
 
 [node name="TextureRect16" type="TextureRect" parent="CanvasLayer2/Control" unique_id=882254398]
 layout_mode = 0
-offset_left = 818.0
-offset_top = 109.0
-offset_right = 898.0
-offset_bottom = 621.0
+offset_left = 890.00006
+offset_top = 106.99999
+offset_right = 970.00006
+offset_bottom = 619.0
 rotation = -3.224683
 scale = Vector2(0.42411056, 0.46695194)
 texture = ExtResource("9_svl6s")
