@@ -5,7 +5,7 @@ var ATTACK_DIR_VARIABILITY = 300.0
 var AGGRO_GAIN_SPEED = 1.0
 var AGGRO_LOSE_SPEED = 0.5
 var AGGRO_COOLDOWN_AFTER_ATTACK = 0.075
-var AGGRO_COOLDOWN_AFTER_HIT = 0.25
+var AGGRO_COOLDOWN_AFTER_HIT = 0.467
 
 # if nonzero = moving towards the player
 var attack_dir: Vector2 = Vector2.ZERO
