@@ -189,6 +189,10 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Button_restart" type="Button" parent="VBoxContainer" unique_id=1900394797]
+layout_mode = 2
+text = "PLAY AGAIN"
+
 [node name="Button_return" type="Button" parent="VBoxContainer" unique_id=946639192]
 layout_mode = 2
 text = "RETURN TO MAIN MENU"
@@ -230,6 +234,20 @@ transition = 1
 script = ExtResource("5_jqi4p")
 destination_string = "res://ui/main_menu.tscn"
 
+[node name="Fn_Restart" type="Node" parent="FadeAction" unique_id=186876579]
+script = ExtResource("3_ynprq")
+
+[node name="FadeIn" type="Node" parent="FadeAction/Fn_Restart" unique_id=1142651224]
+script = ExtResource("4_usilr")
+end_alpha = 1.0
+duration_seconds = 1.0
+ease = 1
+transition = 1
+
+[node name="Transition" type="Node" parent="FadeAction/Fn_Restart" unique_id=425866470]
+script = ExtResource("5_jqi4p")
+destination_string = "res://maps/test_map.tscn"
+
 [node name="Fn_Ragequit" type="Node" parent="FadeAction" unique_id=1872692210]
 script = ExtResource("3_ynprq")
 
@@ -247,5 +265,6 @@ exit_code = 42
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=382037135]
 libraries/ = SubResource("AnimationLibrary_h4ie6")
 
+[connection signal="pressed" from="VBoxContainer/Button_restart" to="FadeAction/Fn_Restart" method="run_dialog"]
 [connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]
 [connection signal="pressed" from="VBoxContainer/Button_quit" to="FadeAction/Fn_Ragequit" method="run_dialog"]
