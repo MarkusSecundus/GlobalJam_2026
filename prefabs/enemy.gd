@@ -2,7 +2,7 @@ extends RigidBody2D
 
 var ATTACK_IMPULSE_MAGNITUDE = 1000.0
 var ATTACK_DIR_VARIABILITY = 300.0
-var AGGRO_GAIN_SPEED_SLOW = 1.0/3.5
+var AGGRO_GAIN_SPEED_SLOW = 1.0/3.67
 var AGGRO_GAIN_SPEED_FAST = 1.0/0.5
 var AGGRO_LOSE_SPEED = 1.0 / 2.0
 var AGGRO_COOLDOWN_AFTER_ATTACK = 0.1
@@ -59,13 +59,10 @@ func _physics_process(delta: float) -> void:
 		pass
 
 func _draw() -> void:
-	var col = lerp(Color.WHITE, Color.DEEP_PINK, aggro_level)
-	if aggro_cooldown > 0.0:
-		col = Color.CORNFLOWER_BLUE
+	var col: Color = lerp(Color.WHITE, Color.DEEP_PINK, aggro_level)
 	draw_arc($PlayerDetectArea.position,
 			$PlayerDetectArea/CollisionShape2D.shape.radius,
 			0, TAU, 32, col)
-	pass
 
 func maybe_do_random_movement(dt: float) -> void:
 	random_move_timeout -= dt
