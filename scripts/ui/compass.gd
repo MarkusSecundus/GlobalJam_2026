@@ -7,7 +7,8 @@ var close_infection_points: Array[Node2D]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().root.get_node("Node2D/Player")
-	pass # Replace with function body.
+	for child_it in get_children():
+			child_it.visible = false
 
 func sort_by_distance(a: Node2D, b: Node2D) -> bool:
 	var a_dist: float = a.global_position.distance_to(player.global_position)
