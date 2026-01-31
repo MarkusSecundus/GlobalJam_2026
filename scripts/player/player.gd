@@ -68,3 +68,6 @@ func _physics_process(delta: float) -> void:
 	direction *= PLAYER_SPEED
 	
 	linear_velocity = linear_velocity.lerp(direction, sqrt(delta))
+
+func do_hurth_effect()->void:
+	$Camera2D/AnimationPlayer.play("player_hit_screenshake")
