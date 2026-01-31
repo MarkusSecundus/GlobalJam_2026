@@ -41,8 +41,10 @@ metadata/_edit_lock_ = true
 shape = SubResource("CircleShape2D_6n8dw")
 
 [node name="PlayerDamageArea" type="Area2D" parent="." unique_id=472458050]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDamageArea" unique_id=969782620]
 shape = SubResource("CircleShape2D_yfjof")
 
+[connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
 [connection signal="body_entered" from="PlayerDamageArea" to="." method="_on_player_damage_area_body_entered"]

@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://d16sb2x7af6pu" path="res://textures/maps/test_map_background.jpg" id="1_42yok"]
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
-[ext_resource type="PackedScene" uid="uid://cf6kkabslbkhh" path="res://prefabs/infection_point.tscn" id="4_42yok"]
+[ext_resource type="PackedScene" path="res://prefabs/infection_point.tscn" id="4_42yok"]
+[ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
@@ -39,3 +40,6 @@ shape = SubResource("RectangleShape2D_b71ab")
 
 [node name="InfectionPoint" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
 position = Vector2(677, -1310)
+
+[node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
+position = Vector2(499, -375)
