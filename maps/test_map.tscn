@@ -25,6 +25,8 @@ size = Vector2(128, 127)
 [node name="Node2D" type="Node2D" unique_id=1443862038]
 script = ExtResource("1_7wt56")
 
+[node name="load_bearing_node" type="Node2D" parent="." unique_id=1878541658]
+
 [node name="background_sprite" type="Sprite2D" parent="." unique_id=1365712728]
 scale = Vector2(10.065, 10.065)
 texture = ExtResource("1_42yok")
