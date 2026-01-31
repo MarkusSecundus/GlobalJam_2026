@@ -53,6 +53,9 @@ func _process(delta: float) -> void:
 		change_mask(Game.Mask.CIRCLE)
 
 func _physics_process(delta: float) -> void:
+	if GameState.is_player_dead:
+		return
+		
 	var direction:= Vector2.ZERO
 	
 	if Input.is_action_pressed("Up"):
