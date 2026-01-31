@@ -7,10 +7,12 @@ const PLAYER_SPEED_FAST: float = 670
 var zoom_t = 0.0
 var zoom_t_target = 0.0
 
+@onready var _anim = $AnimatedSprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	_anim.play("idle")
+	
 func _draw():
 	#draw_circle(self.offset, 100.0, Color.RED, false)
 	pass
