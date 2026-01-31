@@ -47,4 +47,5 @@ metadata/_edit_lock_ = true
 shape = SubResource("CircleShape2D_yfjof")
 
 [connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_exited"]
 [connection signal="body_entered" from="PlayerDamageArea" to="." method="_on_player_damage_area_body_entered"]
