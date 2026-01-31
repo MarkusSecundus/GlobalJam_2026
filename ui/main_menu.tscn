@@ -6,7 +6,14 @@
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_ei257"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_ei257"]
 [ext_resource type="PackedScene" uid="uid://cu1yo7wrtsskt" path="res://maps/test_map.tscn" id="6_p8ri8"]
-[ext_resource type="Script" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="7_p8ri8"]
+[ext_resource type="Script" uid="uid://dmebdwqya2keo" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="7_p8ri8"]
+
+[sub_resource type="FontVariation" id="FontVariation_p8ri8"]
+variation_transform = Transform2D(1.18, 0.01, 0.285, 1, 0, 0)
+
+[sub_resource type="Theme" id="Theme_ubpvv"]
+default_font = SubResource("FontVariation_p8ri8")
+default_font_size = 79
 
 [node name="MainMenu" type="Control" unique_id=1716285209]
 layout_mode = 3
@@ -30,18 +37,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.26330364, 0.07114046, 0.027472045, 1)
 
-[node name="Label" type="Label" parent="." unique_id=194020241]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 127.355
-offset_right = 20.0
-offset_bottom = 150.35503
-grow_horizontal = 2
-text = "BACTERIA or not"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2137517215]
 layout_mode = 1
 anchors_preset = 8
@@ -49,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -33.0
-offset_right = 23.5
-offset_bottom = 33.0
+offset_left = -131.0
+offset_top = 5.0
+offset_right = 131.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -105,6 +100,25 @@ transition = 1
 
 [node name="Quit" type="Node" parent="FadeAction/Fn_Quit" unique_id=1232463584]
 script = ExtResource("7_p8ri8")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=580641285]
+modulate = Color(0.84705883, 0.08627451, 0.08627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.022000002
+offset_left = 96.0
+offset_top = 60.000427
+offset_right = -72.0
+offset_bottom = 314.16
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_ubpvv")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+text = "MICROBIAL
+MASQUERADE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Button_play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_play" to="FadeAction/Fn_Play" method="run_dialog"]
