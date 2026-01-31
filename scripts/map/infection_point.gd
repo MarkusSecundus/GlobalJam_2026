@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 	if progress_bar.value >= 100 and not is_infected:
 		is_infected = true
 		GameState.infected_points += 1
+		GameState.player_gain_hp()
 		progress_bar.hide()
 		infection_sprite.scale.y *= -1
 		# Change sprite here????

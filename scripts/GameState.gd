@@ -1,6 +1,6 @@
 extends Node
 
-var player_hp: int = 5
+var player_hp: int = Game.MAX_PLAYER_HP
 var player_hit_cooldown: float = 0.0
 const PLAYER_HIT_COOLDOWN_SEC = 0.5
 
@@ -21,3 +21,7 @@ func player_hit() -> void:
 	
 	if player_hp <= 0:
 		print("ur ded")
+
+func player_gain_hp() -> void:
+	if player_hp < Game.MAX_PLAYER_HP:
+		player_hp += 1;
