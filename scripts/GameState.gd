@@ -24,7 +24,9 @@ var infected_points: int = 0:
 
 func _update_ost()->void:
 	if player_hp <= 3 or infected_points <= (infected_points/2):
-		SoundManager.SetSoundtrackIntensity(2.0)
+		SoundManager.SetSoundtrackIntensity(1.0)
+	else:
+		SoundManager.SetSoundtrackIntensity(0.0)
 	
 
 func _process(delta: float) -> void:
