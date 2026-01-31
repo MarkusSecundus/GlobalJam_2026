@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 				hint_compass.closest_infection_point_dir = global_position - player.global_position
 				hint_compass.distance_to_closest_infection_point = player_distance
 	
-	if (is_infected):
+	if (is_infected or GameState.is_player_dead or GameState.player_has_won):
 		return
 	
 	var color: Color
