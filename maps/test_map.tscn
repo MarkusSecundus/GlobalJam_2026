@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
 [ext_resource type="PackedScene" uid="uid://cf6kkabslbkhh" path="res://prefabs/infection_point.tscn" id="4_42yok"]
-[ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
+[ext_resource type="PackedScene" path="res://prefabs/enemy.tscn" id="5_cabd0"]
+[ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
 size = Vector2(128, 127)
@@ -38,8 +39,32 @@ texture = ExtResource("1_b71ab")
 position = Vector2(271, 156.5)
 shape = SubResource("RectangleShape2D_b71ab")
 
-[node name="InfectionPoint" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
+[node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
+position = Vector2(1954, -4726)
+
+[node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
+position = Vector2(-812, 4391)
+
+[node name="InfectionPoint2" parent="." unique_id=95096753 instance=ExtResource("4_42yok")]
+position = Vector2(-3992, 84)
+
+[node name="InfectionPoint" parent="." unique_id=929705035 instance=ExtResource("4_42yok")]
 position = Vector2(677, -1310)
 
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
 position = Vector2(499, -375)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2046567294]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1298574837]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=99937386]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 30.0
+script = ExtResource("6_k1jtb")
