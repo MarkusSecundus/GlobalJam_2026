@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 		
 	if progress_bar.value >= 100 and not is_infected:
 		is_infected = true
+		hint_compass.close_infection_points.erase(self)
 		GameState.infected_points += 1
 		GameState.player_gain_hp()
 		progress_bar.hide()
@@ -60,9 +61,11 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_area_2d_hint_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
-		hint_compass.close_infection_points.append(self)
+		if not is_infected:
+			hint_compass.close_infection_points.append(self)
 
 
 func _on_area_2d_hint_body_exited(body: Node2D) -> void:
 	if (body.name == "Player"):
-		hint_compass.close_infection_points.erase(self)
+		if not hint_compass.close_infection_points.has(self):
+			hint_compass.close_infection_points.erase(self)
