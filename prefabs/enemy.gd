@@ -2,8 +2,8 @@ extends RigidBody2D
 
 var ATTACK_IMPULSE_MAGNITUDE = 1000.0
 var ATTACK_DIR_VARIABILITY = 300.0
-var AGGRO_GAIN_SPEED_SLOW = 1.0/2.5
-var AGGRO_GAIN_SPEED_FAST = 1.0/0.67
+var AGGRO_GAIN_SPEED_SLOW = 1.0/3.5
+var AGGRO_GAIN_SPEED_FAST = 1.0/0.5
 var AGGRO_LOSE_SPEED = 1.0 / 2.0
 var AGGRO_COOLDOWN_AFTER_ATTACK = 0.1
 var AGGRO_COOLDOWN_AFTER_HIT = 1.67
@@ -73,8 +73,13 @@ func maybe_do_random_movement(dt: float) -> void:
 	if random_move_timeout <= 0.0:
 		random_move_timeout += randf_range(RANDOM_MOVE_PERIOD_MIN, RANDOM_MOVE_PERIOD_MAX)
 		
+		var magnitude = randf_range(RANDOM_MOVE_MAGNITUDE_MIN, RANDOM_MOVE_MAGNITUDE_MAX)
+		
+		if detected_player: # make the random movement more subtle when the player is in area
+			magnitude *= 0.25
+		
 		var dir: Vector2 = (self.linear_velocity.normalized() + 0.95 * Vector2.from_angle(randf_range(0.0, TAU))).normalized()
-		random_move_impulse = randf_range(RANDOM_MOVE_MAGNITUDE_MIN, RANDOM_MOVE_MAGNITUDE_MAX) * dir
+		random_move_impulse = magnitude * dir
 
 func get_aggro_gain_speed() -> float:
 	if GameState.player_mask == 0:
@@ -105,9 +110,6 @@ func _process(delta: float) -> void:
 		attack_dir = (detected_player.global_position - self.position).normalized()
 		aggro_level = 0.0
 		aggro_cooldown = AGGRO_COOLDOWN_AFTER_ATTACK
-	
-	if detected_player:
-		random_move_timeout = RANDOM_MOVE_PERIOD_MIN
 	
 	maybe_do_random_movement(delta)
 

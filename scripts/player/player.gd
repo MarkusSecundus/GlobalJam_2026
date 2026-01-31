@@ -1,7 +1,7 @@
 class_name Player
 extends RigidBody2D
 
-const PLAYER_SPEED_SLOW: float = 500
+const PLAYER_SPEED_SLOW: float = 450
 const PLAYER_SPEED_FAST: float = 670
 
 # Called when the node enters the scene tree for the first time.
