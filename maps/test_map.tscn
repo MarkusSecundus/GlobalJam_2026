@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
 [ext_resource type="PackedScene" uid="uid://cf6kkabslbkhh" path="res://prefabs/infection_point.tscn" id="4_42yok"]
+[ext_resource type="Script" uid="uid://nmgr3c4axif1" path="res://scripts/map/infection_point_randomizer.gd" id="4_svl6s"]
 [ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
 [ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
 [ext_resource type="Texture2D" uid="uid://dokmmpvsmlkg6" path="res://textures/heart_full.png" id="7_pbr4s"]
@@ -41,8 +42,14 @@ texture = ExtResource("1_b71ab")
 position = Vector2(271, 156.5)
 shape = SubResource("RectangleShape2D_b71ab")
 
+[node name="InfectionPointsRandomizer" type="Node" parent="." unique_id=1043927270]
+script = ExtResource("4_svl6s")
+
 [node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
 position = Vector2(130, -4631)
+
+[node name="InfectionPoint5" parent="." unique_id=1550388127 instance=ExtResource("4_42yok")]
+position = Vector2(1328, -3392)
 
 [node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
 position = Vector2(-812, 4391)

@@ -1,3 +1,4 @@
+class_name InfectionPoint
 extends Node2D
 
 @export var time_to_infect_sec: float = 5

@@ -155,19 +155,26 @@ static func get_unique_id()->int:
 	_counter += 1;
 	return _counter;
 
+# can accept PackedScene, Node or Type
+static func instantiate_generic(prefab: Variant)->Node:
+	if prefab is Node: return (prefab as Node).duplicate()
+	elif prefab is PackedScene: return (prefab as PackedScene).instantiate()
+	return prefab.new()
+
+
 static func instantiate_child_by_type(parent: Node, type: Variant)->Node:
 	var ret :Node = type.new()
 	parent.add_child(ret)
 	ret.owner = parent.get_tree().edited_scene_root
 	return ret
 
-static func instantiate_child(parent: Node, prefab: Resource)->Node:
+static func instantiate_child(parent: Node, prefab: PackedScene)->Node:
 	var ret :Node = prefab.instantiate()
 	parent.add_child(ret)
 	ret.owner = parent.get_tree().edited_scene_root
 	return ret
 
-static func instantiate_child_and_select(parent: Node, prefab: Resource, name: String)->Node:
+static func instantiate_child_and_select(parent: Node, prefab: PackedScene, name: String)->Node:
 	var child := instantiate_child(parent, prefab)
 	child.name = name
 	NodeUtils.set_selection([child])
