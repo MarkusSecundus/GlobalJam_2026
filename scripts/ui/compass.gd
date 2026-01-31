@@ -8,7 +8,7 @@ var close_infection_points: Array[Node2D]
 func _ready() -> void:
 	player = get_tree().root.get_node("Node2D/Player")
 	for child_it in get_children():
-			child_it.visible = false
+			child_it.modulate.a = 0.0
 
 func sort_by_distance(a: Node2D, b: Node2D) -> bool:
 	var a_dist: float = a.global_position.distance_to(player.global_position)
@@ -20,31 +20,33 @@ func sort_by_distance(a: Node2D, b: Node2D) -> bool:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var wish_alphas: Array[float]
+	wish_alphas.resize(get_children().size())
+	
 	if close_infection_points.size() == 0:
-		for child_it in get_children():
-			child_it.visible = false
+		for ii in range(get_children().size()):
+			wish_alphas[ii] = 0.0
+	else:
+		var center = size / 2
+		close_infection_points.sort_custom(sort_by_distance)
+		var closest_infection_point: Node2D = close_infection_points[0]
+		var closest_infection_point_dir = closest_infection_point.global_position - player.global_position
+		var closest_infection_point_dist = closest_infection_point.global_position.distance_to(player.global_position)
 		
-		return
-	
-	var center = size / 2
-	
-	close_infection_points.sort_custom(sort_by_distance)
-	
-	var closest_infection_point: Node2D = close_infection_points[0]
-	var closest_infection_point_dir = closest_infection_point.global_position - player.global_position
-	
-	if (closest_infection_point.global_position.distance_to(player.global_position) < 700):
-		for child_it in get_children():
-			child_it.visible = false
-		
-		return
-	
-	for child_it in get_children():
-		var angle = closest_infection_point_dir.angle_to(child_it.position - center)
-		
-		if (rad_to_deg(angle) < 25 and rad_to_deg(angle) > -25):
-			child_it.visible = true
+		if (closest_infection_point.global_position.distance_to(player.global_position) < 300):
+			for ii in range(get_children().size()):
+				wish_alphas[ii] = 0.0
 		else:
-			child_it.visible = false
-		pass
-	pass
+			for ii in range(get_children().size()):
+				var child_it: TextureRect = get_children()[ii]
+				var angle = closest_infection_point_dir.angle_to(child_it.position - center)
+				
+				if (rad_to_deg(angle) < 25 and rad_to_deg(angle) > -25):
+					wish_alphas[ii] = clamp(1 - closest_infection_point_dist / 2700, 0, 1)
+				else:
+					wish_alphas[ii] = 0.0
+	
+	for ii in range(get_children().size()):
+		var child_it: TextureRect = get_children()[ii]
+		child_it.modulate.a = lerp(child_it.modulate.a, wish_alphas[ii], sqrt(delta))
+	
