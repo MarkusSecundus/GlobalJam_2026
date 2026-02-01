@@ -8,12 +8,12 @@
 [ext_resource type="Script" uid="uid://nmgr3c4axif1" path="res://scripts/map/infection_point_randomizer.gd" id="4_svl6s"]
 [ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
 [ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
-[ext_resource type="Texture2D" uid="uid://dokmmpvsmlkg6" path="res://textures/heart_full.png" id="7_pbr4s"]
 [ext_resource type="Script" uid="uid://b81iosrxwqejt" path="res://scripts/ui/healt_display.gd" id="7_svl6s"]
 [ext_resource type="Texture2D" uid="uid://cxy8osagupk7o" path="res://textures/spike.png" id="9_svl6s"]
 [ext_resource type="Script" uid="uid://dm5v3x76rilu4" path="res://scripts/ui/compass.gd" id="9_wd2vj"]
 [ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="10_wd2vj"]
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="11_fpxlb"]
+[ext_resource type="Texture2D" uid="uid://4dcofeacha46" path="res://textures/life.webp" id="12_6emo8"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
 [ext_resource type="PackedScene" uid="uid://bwc1cyl16dnxq" path="res://ui/pause_dialog.tscn" id="15_ad6p3"]
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
@@ -341,16 +341,15 @@ script = ExtResource("6_k1jtb")
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1806612733]
 layout_direction = 3
 layout_mode = 0
-offset_left = -7235.333
-offset_top = 4.9999995
-offset_right = 992.0
-offset_bottom = 517.0
-scale = Vector2(0.12, 0.12)
+offset_left = 16.349976
+offset_top = 5.0
+offset_right = 528.35
+offset_bottom = 69.0
 script = ExtResource("7_svl6s")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
 layout_mode = 2
-texture = ExtResource("7_pbr4s")
+texture = ExtResource("12_6emo8")
 
 [node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
 script = ExtResource("10_wd2vj")
