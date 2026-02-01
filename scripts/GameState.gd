@@ -60,6 +60,9 @@ func player_hit() -> void:
 		print("ur ded")
 		var death_effect:= find_death_effect()
 		if death_effect: death_effect.do_start()
+		var anim = player.find_child("AnimatedSprite2D")
+		if anim is AnimatedSprite2D:
+			(anim as AnimatedSprite2D).stop()
 
 func player_gain_hp() -> void:
 	if player_hp < Game.MAX_PLAYER_HP:
