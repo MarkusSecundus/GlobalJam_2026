@@ -95,6 +95,9 @@ func get_aggro_gain_speed() -> float:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if GameState.player_has_won:
+		return
+	
 	var initial_aggro_level = aggro_level
 	
 	if aggro_cooldown > 0:
