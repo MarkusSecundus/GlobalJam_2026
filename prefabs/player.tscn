@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cripm7ucxmj4i" path="res://textures/type_circle.png" id="7_opo22"]
 [ext_resource type="Script" uid="uid://bymsueargorsq" path="res://scripts/util/sound/PlaySound.gd" id="7_u51tk"]
 [ext_resource type="AudioStream" uid="uid://dsdncvavabbbd" path="res://music/sounds/mm_being punched_1.wav" id="8_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://cmikflnrgudq5" path="res://textures/mask_change.png" id="10_opo22"]
 
 [sub_resource type="Animation" id="Animation_4dohe"]
 length = 0.001
@@ -411,6 +412,70 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4knd"]
+atlas = ExtResource("10_opo22")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0umtd"]
+atlas = ExtResource("10_opo22")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjmal"]
+atlas = ExtResource("10_opo22")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5rtq"]
+atlas = ExtResource("10_opo22")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xetb"]
+atlas = ExtResource("10_opo22")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiy8a"]
+atlas = ExtResource("10_opo22")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbaj"]
+atlas = ExtResource("10_opo22")
+region = Rect2(512, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6go5d"]
+atlas = ExtResource("10_opo22")
+region = Rect2(768, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5ewc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4knd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0umtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjmal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5rtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xetb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiy8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdbaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6go5d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 25.0
+}]
+
 [node name="Player" type="RigidBody2D" unique_id=477527040]
 gravity_scale = 0.0
 script = ExtResource("1_4dohe")
@@ -474,3 +539,11 @@ script = ExtResource("7_u51tk")
 stream = ExtResource("8_kbsxf")
 pitch_min = 0.915
 pitch_max = 1.09
+
+[node name="mask_change_anim" type="AnimatedSprite2D" parent="." unique_id=1567749615]
+visible = false
+sprite_frames = SubResource("SpriteFrames_s5ewc")
+frame = 4
+frame_progress = 0.49634072
+
+[connection signal="animation_finished" from="mask_change_anim" to="." method="_on_mask_change_anim_animation_finished"]

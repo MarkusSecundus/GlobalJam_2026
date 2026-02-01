@@ -27,6 +27,9 @@ func change_mask(new_mask: int) -> void:
 	else:
 		GameState.player_mask = new_mask
 	
+	$mask_change_anim.visible = true
+	$mask_change_anim.play()
+	
 	$Mask.visible            = GameState.player_mask != 0
 	$MaskShapeTri.visible    = GameState.player_mask & Game.Mask.TRI
 	$MaskShapeSquare.visible = GameState.player_mask & Game.Mask.SQUARE
@@ -98,3 +101,7 @@ func _physics_process(delta: float) -> void:
 func do_hurth_effect()->void:
 	$Camera2D/AnimationPlayer.play("player_hit_screenshake")
 	$Sounds/BeingHit.play()
+
+
+func _on_mask_change_anim_animation_finished() -> void:
+	$mask_change_anim.visible = false
