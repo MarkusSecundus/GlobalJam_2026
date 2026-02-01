@@ -49,13 +49,13 @@ _data = {
 modulate = Color(0.6376306, 0.5156799, 0.48874134, 1)
 rotation = 0.5293845
 scale = Vector2(2.0422323, 2.0422323)
-motion_scale = Vector2(0.95, 0.95)
+motion_scale = Vector2(0.8, 0.8)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer" unique_id=405795505]
-offset_left = -15152.0
-offset_top = -11008.0
-offset_right = 14584.0
-offset_bottom = 11648.0
+offset_left = -7844.9214
+offset_top = -8820.444
+offset_right = 6298.7544
+offset_bottom = 5715.8125
 scale = Vector2(1.2592195, 1.2592195)
 texture = ExtResource("1_7o46m")
 stretch_mode = 1
