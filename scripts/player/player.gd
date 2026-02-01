@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 		rotation = rotate_toward(rotation, target_rotation, rot_speed * delta)
 	
 	# hold to stay still (hold to hold lol)
-	var should_move: bool = !(Input.is_action_pressed("MouseLeft") || Input.is_action_pressed("MouseRight") || (cursor_distance < deadzone_radius))
+	var should_move: bool = !(GameState.player_has_won || Input.is_action_pressed("MouseLeft") || Input.is_action_pressed("MouseRight") || (cursor_distance < deadzone_radius))
 	
 	if should_move:
 		var force_dir := Vector2.from_angle(self.rotation).orthogonal()

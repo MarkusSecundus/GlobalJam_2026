@@ -3,7 +3,9 @@ extends Control
 
 
 @export var do_win: bool:
-	set(_val): do_play()
+	set(_val): 
+		GameState.infected_points = GameState.infected_point_count
+		#do_play()
 
 func do_play()->void:
 	show()
