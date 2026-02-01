@@ -7,6 +7,9 @@ const PLAYER_SPEED_FAST: float = 670
 var zoom_t = 0.0
 var zoom_t_target = 0.0
 
+@export var deadzone_radius : float = 90.0
+@export var gradualzone_radius : float = 400.0
+
 #var moving_via_input: bool = false
 
 @onready var _anim = $AnimatedSprite2D
@@ -80,7 +83,8 @@ func _physics_process(delta: float) -> void:
 		return;
 		
 	var target_facing_vec := get_global_mouse_position() - self.global_position
-	if target_facing_vec.length_squared() > 1.0:
+	var cursor_distance := target_facing_vec.length()
+	if cursor_distance >= deadzone_radius:
 		# this is bad and stupid, but i can't do math rn
 		var rot_vec := Vector2.from_angle(self.rotation).orthogonal()
 		var angle_to_mouse := rot_vec.angle_to(target_facing_vec)
@@ -91,13 +95,15 @@ func _physics_process(delta: float) -> void:
 		rotation = rotate_toward(rotation, target_rotation, rot_speed * delta)
 	
 	# hold to stay still (hold to hold lol)
-	var should_move: bool = !(Input.is_action_pressed("MouseLeft") || Input.is_action_pressed("MouseRight"))
+	var should_move: bool = !(Input.is_action_pressed("MouseLeft") || Input.is_action_pressed("MouseRight") || (cursor_distance < deadzone_radius))
 	
 	if should_move:
 		var force_dir := Vector2.from_angle(self.rotation).orthogonal()
 		var force_amount: float = 7067.0
 		if GameState.player_mask != 0:
 			force_amount = 4000.0
+		if cursor_distance < (gradualzone_radius):
+			force_amount *= clampf((cursor_distance - deadzone_radius)/(gradualzone_radius - deadzone_radius), 0.0, 1.0)
 		apply_central_force(force_amount * force_dir)
 	else:
 		apply_central_force(Vector2.ZERO)
