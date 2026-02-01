@@ -7,7 +7,7 @@ const PLAYER_SPEED_FAST: float = 670
 var zoom_t = 0.0
 var zoom_t_target = 0.0
 
-var moving_via_input: bool = false
+#var moving_via_input: bool = false
 
 @onready var _anim = $AnimatedSprite2D
 
@@ -41,10 +41,10 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Mask3"):
 			change_mask(Game.Mask.CIRCLE)
 
-		if moving_via_input:
-			_anim.play("move")
-		else:
-			_anim.play("idle")
+		#if moving_via_input:
+		#	_anim.play("move")
+		#else:
+		#	_anim.play("idle")
 	
 	const SPEED = 1.0/0.5
 	if zoom_t < zoom_t_target:
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		apply_central_force(Vector2.ZERO)
 		
-	moving_via_input = false
+	#moving_via_input = false
 	
 	if GameState.player_mask == 0:
 		zoom_t_target = 0.0
