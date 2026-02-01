@@ -13,7 +13,7 @@ config_version=5
 config/name="GlobalJam_2026"
 run/main_scene="uid://dan82ij8bjudb"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://c5vq8pmerbjuy"
 
 [autoload]
 
