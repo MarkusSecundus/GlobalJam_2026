@@ -61,6 +61,9 @@ position = Vector2(-4106, 687)
 [node name="InfectionPoint6" parent="." unique_id=120124052 instance=ExtResource("4_42yok")]
 position = Vector2(981, 24)
 
+[node name="InfectionPoint7" parent="." unique_id=507049084 instance=ExtResource("4_42yok")]
+position = Vector2(2645, -4590)
+
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
 position = Vector2(247, -2003)
 
