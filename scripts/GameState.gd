@@ -1,5 +1,15 @@
 extends Node
 
+enum GameScreenType{
+	MENU, IN_GAME, GAME_OVER
+}
+
+var game_screen_type : GameScreenType = GameScreenType.MENU:
+	get: return game_screen_type
+	set(val):
+		game_screen_type = val
+		_update_ost()
+
 var player_hp: int = Game.MAX_PLAYER_HP:
 	get: return player_hp
 	set(val): 
@@ -27,10 +37,21 @@ var infected_points: int = 0:
 		_update_ost()
 
 func _update_ost()->void:
-	if player_hp <= 3 or infected_points <= (infected_points/2):
-		SoundManager.SetSoundtrackIntensity(1.0)
-	else:
-		SoundManager.SetSoundtrackIntensity(0.0)
+	var intensity := 0.0
+	if game_screen_type == GameScreenType.MENU:
+		intensity = 0.0
+	elif game_screen_type == GameScreenType.GAME_OVER:
+		intensity = 4.0
+	elif game_screen_type == GameScreenType.IN_GAME:
+		if player_hp <= 1 or infected_points >= 4:
+			intensity = 3.0
+		elif player_hp <= 2 or infected_points >= 2:
+			intensity = 2.0
+		else:
+			intensity = 1.0
+	
+	print("OST Intensity: {0}".format([intensity]))
+	SoundManager.SetSoundtrackIntensity(intensity)
 	
 
 func _process(delta: float) -> void:

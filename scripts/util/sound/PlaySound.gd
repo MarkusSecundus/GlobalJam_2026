@@ -10,6 +10,13 @@ class_name PlaySound
 @export var play_period_seconds : float = 0.5
 @export var immediate_stop_duration_seconds: float = 0.2;
 
+@export var stop_on_exit_tree : bool = false
+
+func _exit_tree() -> void:
+	if stop_on_exit_tree:
+		self.stop_periodical_play()
+		self.stop_with_fade_out()
+
 var _periodical_play_id : int = 0;
 func start_periodical_play()->void:
 	if play_period_seconds <= 0: play_period_seconds = stream.get_length()

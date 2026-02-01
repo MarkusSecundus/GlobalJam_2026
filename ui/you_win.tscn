@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_vssy2"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_u6afh"]
 [ext_resource type="Script" uid="uid://dmebdwqya2keo" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_QuitGame.gd" id="6_7bpu8"]
+[ext_resource type="Script" uid="uid://bymsueargorsq" path="res://scripts/util/sound/PlaySound.gd" id="7_vssy2"]
+[ext_resource type="AudioStream" uid="uid://bbvypdr5fu1it" path="res://music/sounds/mm_game_win.ogg" id="8_vssy2"]
 
 [sub_resource type="Gradient" id="Gradient_eb1j1"]
 offsets = PackedFloat32Array(0)
@@ -371,6 +373,14 @@ exit_code = 42
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1377378642]
 libraries/ = SubResource("AnimationLibrary_l66it")
+
+[node name="Sounds" type="Node" parent="." unique_id=1171582250]
+
+[node name="GameWon" type="Node" parent="Sounds" unique_id=455668902]
+script = ExtResource("7_vssy2")
+stream = ExtResource("8_vssy2")
+immediate_stop_duration_seconds = 1.0
+stop_on_exit_tree = true
 
 [connection signal="pressed" from="VBoxContainer/Button_restart" to="FadeAction/Fn_Restart" method="run_dialog"]
 [connection signal="pressed" from="VBoxContainer/Button_return" to="FadeAction/Fn_Return" method="run_dialog"]

@@ -10,4 +10,6 @@ func _ready() -> void:
 
 func do_start()->void:
 	self.visible = true
+	GameState.game_screen_type = GameState.GameScreenType.GAME_OVER
 	$AnimationPlayer.play("death_effect")
+	$Sounds/GameLost.play()
