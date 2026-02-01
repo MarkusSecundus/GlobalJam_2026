@@ -90,7 +90,10 @@ func _physics_process(delta: float) -> void:
 		var rot_speed: float = lerp(2.5, 5.5, rot_speed_t)
 		rotation = rotate_toward(rotation, target_rotation, rot_speed * delta)
 	
-	if Input.is_action_pressed("MouseLeft"):
+	# hold to stay still (hold to hold lol)
+	var should_move: bool = !(Input.is_action_pressed("MouseLeft") || Input.is_action_pressed("MouseRight"))
+	
+	if should_move:
 		var force_dir := Vector2.from_angle(self.rotation).orthogonal()
 		var force_amount: float = 7067.0
 		if GameState.player_mask != 0:
