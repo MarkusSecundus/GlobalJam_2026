@@ -89,5 +89,6 @@ func player_hit() -> void:
 			(anim as AnimatedSprite2D).stop()
 
 func player_gain_hp() -> void:
-	if player_hp < Game.MAX_PLAYER_HP:
-		player_hp += 1;
+	return
+	#if player_hp < Game.MAX_PLAYER_HP:
+	#	player_hp += 1;
