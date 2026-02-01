@@ -9,8 +9,6 @@ var zoom_t_target = 0.0
 
 var moving_via_input: bool = false
 
-var target_vector: Vector2 = Vector2.ZERO
-
 @onready var _anim = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
@@ -68,14 +66,14 @@ func _physics_process(delta: float) -> void:
 	
 	var target_facing_vec := get_global_mouse_position() - self.global_position
 	if target_facing_vec.length_squared() > 1.0:
+		# this is bad and stupid, but i can't do math rn
 		var rot_vec := Vector2.from_angle(self.rotation).orthogonal()
 		var angle_to_mouse := rot_vec.angle_to(target_facing_vec)
-		#todo make this not be instant!
-		rotation += angle_to_mouse
-		#apply_torque(6000.0 * sign(angle_to_mouse))
-	else:
-		#apply_torque(0.0)
-		pass
+		var target_rotation := rotation + angle_to_mouse
+	
+		var rot_speed_t: float = clamp(inverse_lerp(0.05 * PI, 0.9*PI, abs(angle_to_mouse)), 0.0, 1.0)
+		var rot_speed: float = lerp(2.5, 5.5, rot_speed_t)
+		rotation = rotate_toward(rotation, target_rotation, rot_speed * delta)
 	
 	if Input.is_action_pressed("MouseLeft"):
 		var force_dir := Vector2.from_angle(self.rotation).orthogonal()
@@ -84,14 +82,6 @@ func _physics_process(delta: float) -> void:
 		apply_central_force(Vector2.ZERO)
 		
 	moving_via_input = false
-	# if Input.is_action_pressed("Up"):
-	# 	direction[1] -= 1
-	# if Input.is_action_pressed("Down"):
-	# 	direction[1] += 1
-	# if Input.is_action_pressed("Left"):
-	# 	direction[0] -= 1
-	# if Input.is_action_pressed("Right"):
-	# 	direction[0] += 1
 	
 	if direction.length_squared() > 0.01:
 		direction = direction.normalized()
