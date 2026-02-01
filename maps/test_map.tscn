@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://du722lvirlpxx" path="res://prefabs/enemy.tscn" id="5_cabd0"]
 [ext_resource type="Script" uid="uid://bd7l507ar4rdt" path="res://scripts/ui/infection_count_label.gd" id="6_k1jtb"]
 [ext_resource type="Script" uid="uid://b81iosrxwqejt" path="res://scripts/ui/healt_display.gd" id="7_svl6s"]
-[ext_resource type="Texture2D" uid="uid://cxy8osagupk7o" path="res://textures/spike.png" id="9_svl6s"]
 [ext_resource type="Script" uid="uid://dm5v3x76rilu4" path="res://scripts/ui/compass.gd" id="9_wd2vj"]
+[ext_resource type="Texture2D" uid="uid://l2oj81g32o1l" path="res://textures/Flash.webp" id="10_w0ppd"]
 [ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="10_wd2vj"]
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="11_fpxlb"]
 [ext_resource type="Texture2D" uid="uid://4dcofeacha46" path="res://textures/life.webp" id="12_6emo8"]
@@ -21,6 +21,56 @@
 [ext_resource type="Texture2D" uid="uid://cripm7ucxmj4i" path="res://textures/type_circle.png" id="15_w0ppd"]
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
 [ext_resource type="PackedScene" uid="uid://bvd5aq6uq0fjx" path="res://ui/you_win.tscn" id="18_6emo8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1we86"]
+atlas = ExtResource("10_w0ppd")
+region = Rect2(0, 0, 222, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbtmw"]
+atlas = ExtResource("10_w0ppd")
+region = Rect2(222, 0, 222, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gtm4"]
+atlas = ExtResource("10_w0ppd")
+region = Rect2(444, 0, 222, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn7f5"]
+atlas = ExtResource("10_w0ppd")
+region = Rect2(666, 0, 222, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thrmo"]
+atlas = ExtResource("10_w0ppd")
+region = Rect2(0, 297, 222, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ciif"]
+atlas = ExtResource("10_w0ppd")
+region = Rect2(222, 297, 222, 297)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0rxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1we86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbtmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gtm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn7f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thrmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ciif")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="FontVariation" id="FontVariation_p8ri8"]
 variation_transform = Transform2D(1.18, 0.01, 0.285, 1, 0, 0)
@@ -138,227 +188,133 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_wd2vj")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Control" unique_id=582608170]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.135
-anchor_top = 1.001
-anchor_right = 0.135
-anchor_bottom = 1.001
-offset_left = -2.800003
-offset_top = -108.72003
-offset_right = 77.20001
-offset_bottom = 403.27997
-rotation = 0.15087655
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=376447545]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(-31, 119)
+rotation = 1.8387308
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.9673702
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/Control" unique_id=958622880]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.432
-anchor_top = 0.998
-anchor_right = 0.432
-anchor_bottom = 0.998
-offset_left = -24.95996
-offset_top = -131.56
-offset_right = 55.04004
-offset_bottom = 380.44
-rotation = -0.10044706
-scale = Vector2(0.3769759, 0.47620493)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=671189858]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(-2, 324)
+rotation = 1.7021849
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.39867845
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer2/Control" unique_id=293245695]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.74600005
-anchor_top = 1.0
-anchor_right = 0.74600005
-anchor_bottom = 1.0
-offset_left = -15.880127
-offset_top = -92.0
-offset_right = 64.11987
-offset_bottom = 420.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=240924885]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(-5.0000076, 593)
+rotation = 1.3607833
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.95362294
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1689885965]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.975
-anchor_right = 1.0
-anchor_bottom = 0.975
-offset_left = -99.00012
-offset_top = -54.00006
-offset_right = -19.0
-offset_bottom = 458.0
-rotation = -0.90449977
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1221924949]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(207, -14.999992)
+rotation = 2.8207064
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.17666775
 
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1830777692]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.342
-anchor_right = 0.342
-offset_left = 14.23999
-offset_top = 103.0
-offset_right = 94.23999
-offset_bottom = 615.0
-rotation = -3.1199386
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=320580054]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(1294.9999, 66.999985)
+rotation = 4.3445225
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.05212627
 
-[node name="TextureRect6" type="TextureRect" parent="CanvasLayer2/Control" unique_id=681473351]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.52000004
-anchor_right = 0.521
-offset_left = 14.399963
-offset_top = 108.999985
-offset_right = 93.119995
-offset_bottom = 621.0
-rotation = -3.1199386
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1332022068]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(1295.0001, 338)
+rotation = 4.559066
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.24949256
 
-[node name="TextureRect7" type="TextureRect" parent="CanvasLayer2/Control" unique_id=834466367]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.83100003
-anchor_right = 0.83100003
-offset_left = -17.680054
-offset_top = 91.0
-offset_right = 62.319946
-offset_bottom = 603.0
-rotation = -2.8115618
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1783923244]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(1311, 701)
+rotation = 5.2265477
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.30255464
 
-[node name="TextureRect8" type="TextureRect" parent="CanvasLayer2/Control" unique_id=81597512]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.001
-anchor_top = 0.147
-anchor_right = 1.001
-anchor_bottom = 0.147
-offset_left = -62.28003
-offset_top = 52.159943
-offset_right = 17.720093
-offset_bottom = 564.1599
-rotation = -2.2610078
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1591525120]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(429, -35)
+rotation = 3.2126253
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.5072557
 
-[node name="TextureRect9" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1611349335]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.172
-anchor_right = 0.172
-offset_left = 38.839996
-offset_top = 96.00001
-offset_right = 118.84
-offset_bottom = 608.0
-rotation = -3.3756123
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=363192617]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(658, -36.999996)
+rotation = 3.2126253
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.31894436
 
-[node name="TextureRect10" type="TextureRect" parent="CanvasLayer2/Control" unique_id=946710419]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.437
-anchor_bottom = 0.437
-offset_left = 105.82872
-offset_top = -7.6759033
-offset_right = 185.82872
-offset_bottom = 504.3241
-rotation = -4.6284137
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=173798706]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(851, -54)
+rotation = 3.1916761
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.68004215
 
-[node name="TextureRect11" type="TextureRect" parent="CanvasLayer2/Control" unique_id=139891247]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.15400001
-anchor_bottom = 0.15400001
-offset_left = 95.82872
-offset_top = 11.084084
-offset_right = 175.82872
-offset_bottom = 523.0841
-rotation = -4.4910345
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1221139941]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(1086.0001, -41.99997)
+rotation = 3.465763
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.61060154
 
-[node name="TextureRect12" type="TextureRect" parent="CanvasLayer2/Control" unique_id=608743536]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.79200006
-anchor_bottom = 0.79200006
-offset_left = 101.99999
-offset_top = -34.24005
-offset_right = 182.0
-offset_bottom = 477.75995
-rotation = -4.969188
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1590122111]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(961, 751)
+rotation = -6.248447
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.31626663
 
-[node name="TextureRect13" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1554565464]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.29500002
-anchor_top = 0.989
-anchor_right = 0.29500002
-anchor_bottom = 0.989
-offset_left = -15.600006
-offset_top = -115.079956
-offset_right = 64.399994
-offset_bottom = 396.91998
-scale = Vector2(0.37779424, 0.53721344)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=752949982]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(746, 701.99994)
+rotation = -6.2296834
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.46139687
 
-[node name="TextureRect14" type="TextureRect" parent="CanvasLayer2/Control" unique_id=2122046545]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.574
-anchor_top = 0.98100007
-anchor_right = 0.574
-anchor_bottom = 0.98100007
-offset_left = -5.7199707
-offset_top = -133.32
-offset_right = 74.28003
-offset_bottom = 378.67993
-rotation = 0.075626425
-scale = Vector2(0.39637062, 0.51748586)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=357170546]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(562, 727.99994)
+rotation = -6.263361
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.19160903
 
-[node name="TextureRect15" type="TextureRect" parent="CanvasLayer2/Control" unique_id=60640551]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.9990001
-anchor_top = 0.49300003
-anchor_right = 0.9990001
-anchor_bottom = 0.49300003
-offset_left = -84.71997
-offset_top = 38.039978
-offset_right = -4.7198486
-offset_bottom = 550.04
-rotation = -1.7545583
-scale = Vector2(0.5533368, 0.56100684)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=59767068]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(378, 747)
+rotation = -6.1557975
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.8682093
 
-[node name="TextureRect16" type="TextureRect" parent="CanvasLayer2/Control" unique_id=882254398]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.675
-anchor_right = 0.675
-offset_left = 26.000061
-offset_top = 106.99999
-offset_right = 106.00006
-offset_bottom = 619.0
-rotation = -3.224683
-scale = Vector2(0.42411056, 0.46695194)
-texture = ExtResource("9_svl6s")
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1096079994]
+modulate = Color(1, 0.29000002, 0.29000002, 1)
+position = Vector2(180, 768.00006)
+rotation = -6.1557975
+sprite_frames = SubResource("SpriteFrames_e0rxn")
+autoplay = "default"
+frame_progress = 0.23930117
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2046567294]
 
