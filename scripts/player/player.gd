@@ -14,6 +14,8 @@ var zoom_t_target = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_anim.play("idle")
+	$Mask.visible = true
+	($Mask as AnimatedSprite2D).scale = Vector2.ZERO
 	
 func _draw():
 	#draw_circle(self.offset, 100.0, Color.RED, false)
@@ -21,6 +23,8 @@ func _draw():
 
 func change_mask(new_mask: int) -> void:
 	assert(new_mask == Game.Mask.TRI or new_mask == Game.Mask.SQUARE or new_mask == Game.Mask.CIRCLE)
+	
+	var mask_intially_visible := GameState.player_mask != 0
 	
 	if GameState.player_mask == new_mask:
 		GameState.player_mask = 0
@@ -30,10 +34,19 @@ func change_mask(new_mask: int) -> void:
 	$mask_change_anim.visible = true
 	$mask_change_anim.play()
 	
-	$Mask.visible            = GameState.player_mask != 0
+	#$Mask.visible            = GameState.player_mask != 0
 	$MaskShapeTri.visible    = GameState.player_mask & Game.Mask.TRI
 	$MaskShapeSquare.visible = GameState.player_mask & Game.Mask.SQUARE
 	$MaskShapeCircle.visible = GameState.player_mask & Game.Mask.CIRCLE
+	
+	var mask_now_visible = GameState.player_mask != 0
+	
+	if mask_intially_visible && !mask_now_visible:
+		var tween := get_tree().create_tween()
+		tween.tween_property($Mask as AnimatedSprite2D, "scale", Vector2.ZERO, 0.1)
+	elif !mask_intially_visible && mask_now_visible:
+		var tween := get_tree().create_tween()
+		tween.tween_property($Mask as AnimatedSprite2D, "scale", Vector2.ONE, 0.1)
 	
 
 func _process(delta: float) -> void:
