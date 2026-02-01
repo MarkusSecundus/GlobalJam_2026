@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 	elif zoom_t > zoom_t_target:
 		zoom_t = max(zoom_t - SPEED * delta, zoom_t_target)
 		
-	var zoom: float = 0.4 + 0.1 * ease(zoom_t, -2.5)
+	var zoom: float = 0.32 + 0.15 * ease(zoom_t, -2.5)
 	$Camera2D.zoom = Vector2(zoom, zoom)
 
 func _physics_process(delta: float) -> void:
