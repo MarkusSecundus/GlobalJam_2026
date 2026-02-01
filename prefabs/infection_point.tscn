@@ -350,6 +350,7 @@ stream = ExtResource("4_p5vp0")
 pitch_min = 0.7
 pitch_max = 1.15
 immediate_stop_duration_seconds = 1.0
+stop_on_exit_tree = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
