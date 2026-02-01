@@ -295,7 +295,7 @@ theme = SubResource("Theme_7bpu8")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 15
 text = "YOU WIN!
-GOOD JOB !!!"
+GOOD JOB, YOU KILLED A PERSON!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
