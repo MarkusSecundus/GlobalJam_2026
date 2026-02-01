@@ -49,9 +49,13 @@ func _process(delta: float) -> void:
 		progress_bar.value += (100 * delta) / time_to_infect_sec
 		color = Color.DARK_TURQUOISE
 		should_play_sound = true
+		$AnimatedSprite2D_attacked.visible = true
+		$AnimatedSprite2D_healthy.visible = false
 	else:
 		progress_bar.value -= (100 * delta) / progress_loss_sec
 		color = Color.ORANGE_RED
+		$AnimatedSprite2D_attacked.visible = false
+		$AnimatedSprite2D_healthy.visible = true
 	
 	progress_bar.modulate = lerp(progress_bar.modulate, color, sqrt(delta))
 	
@@ -62,7 +66,9 @@ func _process(delta: float) -> void:
 		GameState.infected_points += 1
 		GameState.player_gain_hp()
 		progress_bar.hide()
-		infection_sprite.scale.y *= -1
+		
+		$AnimatedSprite2D_healthy.visible = false
+		$AnimatedSprite2D_infested.visible = true
 		
 		var scene = preload("res://prefabs/enemy.tscn")
 		var total_infection_points :Array= NodeUtils.get_descendants_of_type(get_tree().root, InfectionPoint)
