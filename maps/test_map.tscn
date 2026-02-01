@@ -323,12 +323,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=802225626]
-modulate = Color(0.84705883, 0.08627451, 0.08627451, 1)
 layout_mode = 1
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 313.0
-offset_bottom = 79.0
+offset_left = 19.0
+offset_top = 9.0
+offset_right = 322.0
+offset_bottom = 78.0
 pivot_offset_ratio = Vector2(0.5, 0.7)
 theme = SubResource("Theme_6emo8")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
