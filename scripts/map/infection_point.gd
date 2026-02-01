@@ -40,24 +40,23 @@ func _process(delta: float) -> void:
 	if (is_infected or GameState.is_player_dead or GameState.player_has_won):
 		return
 	
-	var color: Color
+	#var color: Color
 	
 	var should_play_sound : bool = false
 	
 	if (is_player_inside):
 		
 		progress_bar.value += (100 * delta) / time_to_infect_sec
-		color = Color.DARK_TURQUOISE
 		should_play_sound = true
 		$AnimatedSprite2D_attacked.visible = true
 		$AnimatedSprite2D_healthy.visible = false
 	else:
 		progress_bar.value -= (100 * delta) / progress_loss_sec
-		color = Color.ORANGE_RED
 		$AnimatedSprite2D_attacked.visible = false
 		$AnimatedSprite2D_healthy.visible = true
 	
-	progress_bar.modulate = lerp(progress_bar.modulate, color, sqrt(delta))
+	#progress_bar.modulate = Color.WHITE
+	#progress_bar.modulate = lerp(progress_bar.modulate, color, sqrt(delta))
 	
 	if progress_bar.value >= 100 and not is_infected:
 		should_play_sound = false

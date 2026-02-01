@@ -8,9 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://c3oummu0rnb6x" path="res://music/sounds/mm_infistation_new.ogg" id="4_p5vp0"]
 [ext_resource type="Texture2D" uid="uid://xi4a4vulog42" path="res://textures/cell_infested.webp" id="5_n768g"]
 
-[sub_resource type="Theme" id="Theme_0bg5s"]
-resource_local_to_scene = true
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_opy4x"]
 atlas = ExtResource("3_r2vi7")
 region = Rect2(0, 0, 196, 196)
@@ -287,6 +284,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2vi7"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_0bg5s"]
+resource_local_to_scene = true
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_r2vi7")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bg5s"]
 radius = 291.48755
 
@@ -296,33 +300,37 @@ radius = 2600.0
 [node name="InfectionPoint" type="Node2D" unique_id=1551551606]
 script = ExtResource("1_0bg5s")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=996346493]
-custom_minimum_size = Vector2(200, 0)
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = -73.0
-theme = SubResource("Theme_0bg5s")
-show_percentage = false
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1715117606]
 visible = false
+scale = Vector2(2, 2)
 texture = ExtResource("1_0gl0a")
 
 [node name="AnimatedSprite2D_healthy" type="AnimatedSprite2D" parent="." unique_id=822687747]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rn27w")
 autoplay = "default"
 frame_progress = 0.5552258
 
 [node name="AnimatedSprite2D_attacked" type="AnimatedSprite2D" parent="." unique_id=1463518392]
 visible = false
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rgakw")
 autoplay = "default"
 
 [node name="AnimatedSprite2D_infested" type="AnimatedSprite2D" parent="." unique_id=363314243]
 visible = false
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2dif0")
 autoplay = "default"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=996346493]
+custom_minimum_size = Vector2(200, 0)
+offset_left = -89.0
+offset_top = -183.0
+offset_right = 111.0
+offset_bottom = -156.0
+theme = SubResource("Theme_0bg5s")
+show_percentage = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1999560846]
 
