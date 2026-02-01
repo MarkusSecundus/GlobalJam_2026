@@ -190,7 +190,6 @@ script = ExtResource("1_h4ie6")
 
 [node name="Fader" type="TextureRect" parent="." unique_id=1888332029]
 modulate = Color(1, 1, 1, 0)
-z_index = 4096
 z_as_relative = false
 layout_mode = 1
 anchors_preset = -1
