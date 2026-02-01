@@ -189,7 +189,6 @@ grow_vertical = 2
 script = ExtResource("9_wd2vj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=376447545]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(-31, 119)
 rotation = 1.8387308
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -197,7 +196,6 @@ autoplay = "default"
 frame_progress = 0.9673702
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=671189858]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(-2, 324)
 rotation = 1.7021849
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -205,7 +203,6 @@ autoplay = "default"
 frame_progress = 0.39867845
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=240924885]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(-5.0000076, 593)
 rotation = 1.3607833
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -213,7 +210,6 @@ autoplay = "default"
 frame_progress = 0.95362294
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1221924949]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(207, -14.999992)
 rotation = 2.8207064
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -221,7 +217,6 @@ autoplay = "default"
 frame_progress = 0.17666775
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=320580054]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(1294.9999, 66.999985)
 rotation = 4.3445225
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -229,7 +224,6 @@ autoplay = "default"
 frame_progress = 0.05212627
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1332022068]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(1295.0001, 338)
 rotation = 4.559066
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -237,7 +231,6 @@ autoplay = "default"
 frame_progress = 0.24949256
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1783923244]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(1311, 701)
 rotation = 5.2265477
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -245,7 +238,6 @@ autoplay = "default"
 frame_progress = 0.30255464
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1591525120]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(429, -35)
 rotation = 3.2126253
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -253,7 +245,6 @@ autoplay = "default"
 frame_progress = 0.5072557
 
 [node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=363192617]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(658, -36.999996)
 rotation = 3.2126253
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -261,7 +252,6 @@ autoplay = "default"
 frame_progress = 0.31894436
 
 [node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=173798706]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(851, -54)
 rotation = 3.1916761
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -269,7 +259,6 @@ autoplay = "default"
 frame_progress = 0.68004215
 
 [node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1221139941]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(1086.0001, -41.99997)
 rotation = 3.465763
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -277,7 +266,6 @@ autoplay = "default"
 frame_progress = 0.61060154
 
 [node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1590122111]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(961, 751)
 rotation = -6.248447
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -285,7 +273,6 @@ autoplay = "default"
 frame_progress = 0.31626663
 
 [node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=752949982]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(746, 701.99994)
 rotation = -6.2296834
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -293,7 +280,6 @@ autoplay = "default"
 frame_progress = 0.46139687
 
 [node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=357170546]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(562, 727.99994)
 rotation = -6.263361
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -301,7 +287,6 @@ autoplay = "default"
 frame_progress = 0.19160903
 
 [node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=59767068]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(378, 747)
 rotation = -6.1557975
 sprite_frames = SubResource("SpriteFrames_e0rxn")
@@ -309,7 +294,6 @@ autoplay = "default"
 frame_progress = 0.8682093
 
 [node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1096079994]
-modulate = Color(1, 0.29000002, 0.29000002, 1)
 position = Vector2(180, 768.00006)
 rotation = -6.1557975
 sprite_frames = SubResource("SpriteFrames_e0rxn")

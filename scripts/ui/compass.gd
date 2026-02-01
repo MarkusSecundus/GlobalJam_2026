@@ -49,10 +49,13 @@ func _process(delta: float) -> void:
 	for ii in get_children().size():
 		var child_it: AnimatedSprite2D = get_children()[ii]
 		if wish_alphas[ii] > 0.0:
-			wish_alphas[ii] += sin((Time.get_ticks_msec() + ii * 1234) / 1000.0) / 10
+			child_it.modulate.a = 0.5
+		else:
+			child_it.modulate.a = 0.0
+			#wish_alphas[ii] += sin((Time.get_ticks_msec() + ii * 1234) / 1000.0) / 10
 		
 		wish_alphas[ii] = clamp(wish_alphas[ii], 0, 1)
 		
 		# God this is so stupid
-		child_it.modulate.a = lerp(child_it.modulate.a, wish_alphas[ii], sqrt(delta))
+		#child_it.modulate.a = lerp(child_it.modulate.a, wish_alphas[ii], sqrt(delta))
 		#child_it.scale.y = 0.4 + sin((Time.get_ticks_msec() + ii * 1234) / 1000.0) / 30
