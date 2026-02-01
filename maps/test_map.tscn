@@ -19,6 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
 [ext_resource type="PackedScene" uid="uid://bvd5aq6uq0fjx" path="res://ui/you_win.tscn" id="18_6emo8"]
 
+[sub_resource type="FontVariation" id="FontVariation_p8ri8"]
+variation_transform = Transform2D(1.18, 0.01, 0.285, 1, 0, 0)
+
+[sub_resource type="Theme" id="Theme_6emo8"]
+default_font = SubResource("FontVariation_p8ri8")
+default_font_size = 35
+
 [node name="Node2D" type="Node2D" unique_id=1443862038]
 script = ExtResource("1_7wt56")
 
@@ -312,14 +319,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=99937386]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=802225626]
+modulate = Color(0.84705883, 0.08627451, 0.08627451, 1)
 layout_mode = 1
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 57.0
-offset_bottom = 59.0
-text = "XX/XX Infected
-"
+offset_right = 313.0
+offset_bottom = 79.0
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_6emo8")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+text = "XX/XX Infected"
 script = ExtResource("6_k1jtb")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1806612733]
