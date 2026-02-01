@@ -60,6 +60,9 @@ func _process(delta: float) -> void:
 			change_mask(Game.Mask.SQUARE)
 		if Input.is_action_just_pressed("Mask3"):
 			change_mask(Game.Mask.CIRCLE)
+		if Input.is_action_just_pressed("MaskRemove"):
+			if GameState.player_mask != 0:
+				change_mask(GameState.player_mask)
 
 		#if moving_via_input:
 		#	_anim.play("move")
