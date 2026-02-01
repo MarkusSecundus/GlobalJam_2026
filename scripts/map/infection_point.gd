@@ -42,19 +42,21 @@ func _process(delta: float) -> void:
 	
 	var color: Color
 	
+	var should_play_sound : bool = false
+	
 	if (is_player_inside):
 		
 		progress_bar.value += (100 * delta) / time_to_infect_sec
 		color = Color.DARK_TURQUOISE
-		$Sounds/BeingInfected.start_periodical_play_if_not_playing_already()
+		should_play_sound = true
 	else:
 		progress_bar.value -= (100 * delta) / progress_loss_sec
 		color = Color.ORANGE_RED
-		$Sounds/BeingInfected.stop_periodical_play_immediate()
 	
 	progress_bar.modulate = lerp(progress_bar.modulate, color, sqrt(delta))
 	
 	if progress_bar.value >= 100 and not is_infected:
+		should_play_sound = false
 		is_infected = true
 		hint_compass.close_infection_points.erase(self)
 		GameState.infected_points += 1
@@ -72,6 +74,10 @@ func _process(delta: float) -> void:
 					get_parent().add_child(enemy)
 		
 		# Change sprite here????
+	if should_play_sound:
+		$Sounds/BeingInfected.play_if_not_playing()
+	else:
+		$Sounds/BeingInfected.stop_with_fade_out()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):

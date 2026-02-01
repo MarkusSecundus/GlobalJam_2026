@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bsunrcmp5c6x1" path="res://scripts/map/infection_point.gd" id="1_0bg5s"]
 [ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_0gl0a"]
 [ext_resource type="Script" uid="uid://bymsueargorsq" path="res://scripts/util/sound/PlaySound.gd" id="3_p5vp0"]
-[ext_resource type="AudioStream" uid="uid://0a5t0umm5d67" path="res://music/sounds/mm_infistation_1.ogg" id="4_nt3xy"]
+[ext_resource type="AudioStream" uid="uid://c3oummu0rnb6x" path="res://music/sounds/mm_infistation_new.ogg" id="4_p5vp0"]
 
 [sub_resource type="Theme" id="Theme_0bg5s"]
 resource_local_to_scene = true
@@ -43,10 +43,10 @@ shape = SubResource("CircleShape2D_vh4d5")
 
 [node name="BeingInfected" type="Node" parent="Sounds" unique_id=573950248]
 script = ExtResource("3_p5vp0")
-stream = ExtResource("4_nt3xy")
+stream = ExtResource("4_p5vp0")
 pitch_min = 0.7
 pitch_max = 1.15
-immediate_stop_duration_seconds = 0.6
+immediate_stop_duration_seconds = 1.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

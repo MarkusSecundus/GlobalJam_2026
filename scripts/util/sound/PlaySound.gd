@@ -36,6 +36,9 @@ func stop_periodical_play_immediate()->void:
 		await tw.finished
 		_is_stopping_periodical_play_immediate = false
 
+func is_playing()->bool:
+	return _current_player and _current_player.playing
+
 var _current_player : AudioStreamPlayer;
 var _last_play_timestamp : float = -INF;
 func play()->void:
@@ -44,5 +47,12 @@ func play()->void:
 	_last_play_timestamp = TimeUtils.seconds_elapsed
 	_current_player = SoundManager.PlaySound(to_play, randf_range(pitch_min, pitch_max) if pitch_min < pitch_max else pitch_min, volume_db)
 
-func stop()->void:
-	pass
+func play_if_not_playing()->void:
+	if is_playing(): return
+	play()
+
+var _stopping_tween : Tween
+func stop_with_fade_out()->void:
+	if not is_playing(): return
+	if _stopping_tween and _stopping_tween.is_running(): return
+	_stopping_tween = SoundManager.StopPlayGradually(_current_player, immediate_stop_duration_seconds)

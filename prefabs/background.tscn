@@ -46,6 +46,7 @@ _data = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1156149217]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1672092329]
+modulate = Color(0.77, 0.66309834, 0.63909996, 1)
 rotation = 0.5293845
 scale = Vector2(2.0422323, 2.0422323)
 motion_scale = Vector2(0.95, 0.95)
