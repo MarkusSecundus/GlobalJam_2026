@@ -62,8 +62,6 @@ func _physics_process(delta: float) -> void:
 	if GameState.player_has_won:
 		return;
 		
-	var direction:= Vector2.ZERO
-	
 	var target_facing_vec := get_global_mouse_position() - self.global_position
 	if target_facing_vec.length_squared() > 1.0:
 		# this is bad and stupid, but i can't do math rn
@@ -77,24 +75,24 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("MouseLeft"):
 		var force_dir := Vector2.from_angle(self.rotation).orthogonal()
-		apply_central_force(7000.0 * force_dir)
+		var force_amount: float = 7067.0
+		if GameState.player_mask != 0:
+			force_amount = 4000.0
+		apply_central_force(force_amount * force_dir)
 	else:
 		apply_central_force(Vector2.ZERO)
 		
 	moving_via_input = false
 	
-	if direction.length_squared() > 0.01:
-		direction = direction.normalized()
-		moving_via_input = true
-	
 	if GameState.player_mask == 0:
-		direction *= PLAYER_SPEED_FAST
 		zoom_t_target = 0.0
 	else:
-		direction *= PLAYER_SPEED_SLOW
 		zoom_t_target = 1.0
 	
-	linear_velocity = linear_velocity.lerp(direction, sqrt(delta))
+	# This is actually load-bearing code that makes the movement feel like
+	# ... well like it feels and what we've been "balancing" for,
+	# so it is what it is.
+	linear_velocity = linear_velocity.lerp(Vector2.ZERO, sqrt(delta))
 
 func do_hurth_effect()->void:
 	$Camera2D/AnimationPlayer.play("player_hit_screenshake")
