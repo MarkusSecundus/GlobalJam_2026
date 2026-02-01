@@ -55,7 +55,10 @@ func player_hit() -> void:
 	
 	
 	var player := find_player()
-	if player: player.do_hurth_effect()
+	if player:
+		player.do_hurth_effect()
+		if (GameState.player_mask != 0):
+			player.change_mask(GameState.player_mask)
 	if player_hp <= 0:
 		print("ur ded")
 		var death_effect:= find_death_effect()
