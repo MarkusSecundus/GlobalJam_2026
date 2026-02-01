@@ -10,6 +10,6 @@ func do_randomize()->void:
 	while total_infection_points.size() > total_infection_points_count:
 		var idx := randi_range(0, total_infection_points.size() - 1)	
 		var to_delete := (total_infection_points[idx] as InfectionPoint)
-		to_delete.get_parent().remove_child(to_delete)
+		to_delete.get_parent().remove_child.call_deferred(to_delete)
 		to_delete.queue_free()
 		total_infection_points.remove_at(idx)
