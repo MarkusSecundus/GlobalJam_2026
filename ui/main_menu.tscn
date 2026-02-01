@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmgjs27wdvf58" path="res://scripts/ui/main_menu.gd" id="1_p8ri8"]
 [ext_resource type="Script" uid="uid://oftyspnf0fd3" path="res://scripts/util/dialog_system/DialogSystem.gd" id="2_rmr83"]
+[ext_resource type="Texture2D" uid="uid://c60vrkbdkhhoq" path="res://textures/maps/new_background.png" id="2_ubpvv"]
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="3_8uxxo"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="4_ei257"]
 [ext_resource type="Script" uid="uid://dfavgujxe6882" path="res://scripts/util/dialog_system/simple_actions/DialogActionTransitionScene.gd" id="5_ei257"]
@@ -24,18 +25,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p8ri8")
 
-[node name="Panel" type="ColorRect" parent="." unique_id=1602009339]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=725825477]
+layout_mode = 0
+offset_left = -1921.998
+offset_top = -1923.999
+offset_right = 27814.002
+offset_bottom = 20732.0
+scale = Vector2(0.19241609, 0.20957007)
+texture = ExtResource("2_ubpvv")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2054873260]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -40.0
-offset_right = 152.0
-offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.26330364, 0.07114046, 0.027472045, 1)
+color = Color(0.35, 0.101500005, 0.101500005, 0.40392157)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2137517215]
 layout_mode = 1
