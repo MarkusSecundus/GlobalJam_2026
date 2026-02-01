@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cu1yo7wrtsskt"]
 
 [ext_resource type="Script" uid="uid://cvhj2mey2tu7a" path="res://scripts/map.gd" id="1_7wt56"]
-[ext_resource type="Texture2D" uid="uid://b260c3nadfxfo" path="res://icon.svg" id="1_b71ab"]
 [ext_resource type="PackedScene" uid="uid://c3xj4b6hkd2v5" path="res://prefabs/player.tscn" id="1_pwco0"]
 [ext_resource type="PackedScene" uid="uid://c8cg06myd0at6" path="res://prefabs/background.tscn" id="2_tiop4"]
 [ext_resource type="PackedScene" uid="uid://bgofmnuxoun5e" path="res://prefabs/background_sprite.tscn" id="3_tiop4"]
@@ -20,9 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
 [ext_resource type="PackedScene" uid="uid://bvd5aq6uq0fjx" path="res://ui/you_win.tscn" id="18_6emo8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b71ab"]
-size = Vector2(128, 127)
-
 [node name="Node2D" type="Node2D" unique_id=1443862038]
 script = ExtResource("1_7wt56")
 
@@ -32,37 +28,28 @@ position = Vector2(1366, -1318)
 [node name="load_bearing_node" type="Node2D" parent="." unique_id=1878541658]
 
 [node name="background_sprite" parent="." unique_id=2023250813 instance=ExtResource("3_tiop4")]
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=477527040 instance=ExtResource("1_pwco0")]
-position = Vector2(2264, -3160)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=171971044]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=159950012]
-position = Vector2(270, 156)
-texture = ExtResource("1_b71ab")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=330699348]
-position = Vector2(271, 156.5)
-shape = SubResource("RectangleShape2D_b71ab")
+position = Vector2(-973, 4427)
 
 [node name="InfectionPointsRandomizer" type="Node" parent="." unique_id=1043927270]
 script = ExtResource("4_svl6s")
 
-[node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
-position = Vector2(-2884, -4094)
-
-[node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
-position = Vector2(-704, 3917)
+[node name="InfectionPoint" parent="." unique_id=929705035 instance=ExtResource("4_42yok")]
+position = Vector2(4526, 3857)
 
 [node name="InfectionPoint2" parent="." unique_id=95096753 instance=ExtResource("4_42yok")]
 position = Vector2(-4536, 543)
 
-[node name="InfectionPoint" parent="." unique_id=929705035 instance=ExtResource("4_42yok")]
-position = Vector2(4526, 3857)
+[node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
+position = Vector2(-704, 3917)
+
+[node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
+position = Vector2(-2884, -4094)
 
 [node name="InfectionPoint5" parent="." unique_id=2086591364 instance=ExtResource("4_42yok")]
-position = Vector2(2717, -3363)
+position = Vector2(3320, -3425)
 
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
 position = Vector2(247, -2003)
