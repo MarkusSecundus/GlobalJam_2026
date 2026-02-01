@@ -15,7 +15,10 @@
 [ext_resource type="Script" uid="uid://drunnu1gxn230" path="res://scripts/util/dialog_system/DialogCoroutine.gd" id="11_fpxlb"]
 [ext_resource type="Texture2D" uid="uid://4dcofeacha46" path="res://textures/life.webp" id="12_6emo8"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
+[ext_resource type="Texture2D" uid="uid://bfd831urwqje0" path="res://textures/type_triangle.png" id="13_tiop4"]
+[ext_resource type="Texture2D" uid="uid://bp23m5awjgfqp" path="res://textures/type_square.png" id="14_lqwt6"]
 [ext_resource type="PackedScene" uid="uid://bwc1cyl16dnxq" path="res://ui/pause_dialog.tscn" id="15_ad6p3"]
+[ext_resource type="Texture2D" uid="uid://cripm7ucxmj4i" path="res://textures/type_circle.png" id="15_w0ppd"]
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
 [ext_resource type="PackedScene" uid="uid://bvd5aq6uq0fjx" path="res://ui/you_win.tscn" id="18_6emo8"]
 
@@ -25,6 +28,51 @@ variation_transform = Transform2D(1.18, 0.01, 0.285, 1, 0, 0)
 [sub_resource type="Theme" id="Theme_6emo8"]
 default_font = SubResource("FontVariation_p8ri8")
 default_font_size = 35
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw4qe"]
+atlas = ExtResource("13_tiop4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0wvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw4qe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0wvt"]
+atlas = ExtResource("14_lqwt6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tiop4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0wvt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44fp6"]
+atlas = ExtResource("15_w0ppd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thrmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44fp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=1443862038]
 script = ExtResource("1_7wt56")
@@ -349,6 +397,70 @@ script = ExtResource("7_svl6s")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
 layout_mode = 2
 texture = ExtResource("12_6emo8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=1016192482]
+position = Vector2(36.872124, 93)
+scale = Vector2(0.6172314, 0.57785255)
+sprite_frames = SubResource("SpriteFrames_x0wvt")
+frame_progress = 0.047975037
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=114862359]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 74.7514
+offset_top = 70.0
+offset_right = 274.7514
+offset_bottom = 120.0
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_6emo8")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/normal_font_size = 30
+text = "[1]"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=1863932158]
+position = Vector2(36.751404, 132)
+scale = Vector2(0.6172314, 0.57785255)
+sprite_frames = SubResource("SpriteFrames_tiop4")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=803714741]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 73.7514
+offset_top = 111.0
+offset_right = 273.7514
+offset_bottom = 161.0
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_6emo8")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/normal_font_size = 30
+text = "[2]"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=992912787]
+position = Vector2(37.502808, 173)
+scale = Vector2(0.6172314, 0.57785255)
+sprite_frames = SubResource("SpriteFrames_thrmo")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=228512846]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 73.502815
+offset_top = 152.0
+offset_right = 273.5028
+offset_bottom = 202.0
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_6emo8")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/normal_font_size = 30
+text = "[3]"
 
 [node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
 script = ExtResource("10_wd2vj")
