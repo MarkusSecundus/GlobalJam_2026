@@ -37,34 +37,37 @@ position = Vector2(-973, 4427)
 script = ExtResource("4_svl6s")
 
 [node name="InfectionPoint" parent="." unique_id=929705035 instance=ExtResource("4_42yok")]
-position = Vector2(4526, 3857)
+position = Vector2(4078, 3495)
 
 [node name="InfectionPoint2" parent="." unique_id=95096753 instance=ExtResource("4_42yok")]
-position = Vector2(-4536, 543)
+position = Vector2(3857, 101)
 
 [node name="InfectionPoint3" parent="." unique_id=2010099196 instance=ExtResource("4_42yok")]
-position = Vector2(-704, 3917)
+position = Vector2(-3082, 4334)
 
 [node name="InfectionPoint4" parent="." unique_id=1551551606 instance=ExtResource("4_42yok")]
-position = Vector2(-2884, -4094)
+position = Vector2(-2412, -4597)
 
 [node name="InfectionPoint5" parent="." unique_id=2086591364 instance=ExtResource("4_42yok")]
-position = Vector2(3320, -3425)
+position = Vector2(-4106, 687)
+
+[node name="InfectionPoint6" parent="." unique_id=120124052 instance=ExtResource("4_42yok")]
+position = Vector2(981, 24)
 
 [node name="Enemy" parent="." unique_id=829923330 instance=ExtResource("5_cabd0")]
 position = Vector2(247, -2003)
 
 [node name="Enemy2" parent="." unique_id=2124216792 instance=ExtResource("5_cabd0")]
-position = Vector2(-2631, -304)
+position = Vector2(-2985, -228)
 
 [node name="Enemy3" parent="." unique_id=552014090 instance=ExtResource("5_cabd0")]
-position = Vector2(2420, 970)
+position = Vector2(1695, 3621)
 
 [node name="Enemy4" parent="." unique_id=1773387217 instance=ExtResource("5_cabd0")]
 position = Vector2(896, -520)
 
 [node name="Enemy5" parent="." unique_id=745425875 instance=ExtResource("5_cabd0")]
-position = Vector2(-40, 2593)
+position = Vector2(-8, 3003)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1889071965]
 
