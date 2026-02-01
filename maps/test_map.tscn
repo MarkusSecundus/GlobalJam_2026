@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bwc1cyl16dnxq" path="res://ui/pause_dialog.tscn" id="15_ad6p3"]
 [ext_resource type="Texture2D" uid="uid://cripm7ucxmj4i" path="res://textures/type_circle.png" id="15_w0ppd"]
 [ext_resource type="PackedScene" uid="uid://dxl75w7exbnhh" path="res://ui/death_screen.tscn" id="16_qnwwd"]
+[ext_resource type="Texture2D" uid="uid://cemq6f344epd" path="res://textures/shield.png" id="16_w0ppd"]
 [ext_resource type="PackedScene" uid="uid://bvd5aq6uq0fjx" path="res://ui/you_win.tscn" id="18_6emo8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1we86"]
@@ -118,6 +119,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_44fp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0rxn"]
+atlas = ExtResource("16_w0ppd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dvw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0rxn")
 }],
 "loop": true,
 "name": &"default",
@@ -401,6 +417,27 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[3]"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=204476906]
+position = Vector2(37.502808, 214)
+scale = Vector2(0.6172314, 0.57785255)
+sprite_frames = SubResource("SpriteFrames_8dvw1")
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=457699588]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 74.0
+offset_top = 193.0
+offset_right = 274.0
+offset_bottom = 243.0
+pivot_offset_ratio = Vector2(0.5, 0.7)
+theme = SubResource("Theme_6emo8")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/normal_font_size = 30
+text = "[4]"
 
 [node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
 script = ExtResource("10_wd2vj")
