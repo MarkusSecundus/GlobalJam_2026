@@ -1,24 +1,6 @@
 [gd_scene format=3 uid="uid://c8cg06myd0at6"]
 
-[ext_resource type="Script" uid="uid://db1ys133pfxs8" path="res://scripts/util/visual/NoiseAnimationHook.gd" id="1_pfihi"]
-
-[sub_resource type="Gradient" id="Gradient_6emo8"]
-colors = PackedColorArray(0.35457695, 0.15312278, 0.15654108, 1, 0.54, 0.2862, 0.37080005, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_tiop4"]
-noise_type = 2
-fractal_octaves = 2
-fractal_lacunarity = 2.1984427
-fractal_gain = 1.025
-cellular_jitter = 0.9
-domain_warp_fractal_octaves = 2
-domain_warp_fractal_lacunarity = 0.77
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rw4qe"]
-generate_mipmaps = false
-noise = SubResource("FastNoiseLite_tiop4")
-color_ramp = SubResource("Gradient_6emo8")
-seamless = true
+[ext_resource type="Texture2D" uid="uid://c60vrkbdkhhoq" path="res://textures/maps/new_background.png" id="1_7o46m"]
 
 [sub_resource type="Animation" id="Animation_rw4qe"]
 length = 7.3
@@ -66,7 +48,7 @@ _data = {
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1672092329]
 rotation = 0.5293845
 scale = Vector2(2.0422323, 2.0422323)
-motion_scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(0.95, 0.95)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer" unique_id=405795505]
 offset_left = -15152.0
@@ -74,12 +56,8 @@ offset_top = -11008.0
 offset_right = 14584.0
 offset_bottom = 11648.0
 scale = Vector2(1.2592195, 1.2592195)
-texture = SubResource("NoiseTexture2D_rw4qe")
+texture = ExtResource("1_7o46m")
 stretch_mode = 1
-script = ExtResource("1_pfihi")
-fractal_lacunarity = 2.1984427
-fractal_gain = 1.025
-cellular_jitter = 0.9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/TextureRect" unique_id=523357907]
 libraries/ = SubResource("AnimationLibrary_rw4qe")
