@@ -1,8 +1,9 @@
 class_name Player
 extends RigidBody2D
 
-const PLAYER_SPEED_SLOW: float = 450
-const PLAYER_SPEED_FAST: float = 670
+const PLAYER_SPEED_SLOW: float = 4000.0
+const PLAYER_SPEED_FAST: float = 7067.0
+# const PLAYER_SPEED_FAST: float = 12067.0 # for debugging
 
 var zoom_t = 0.0
 var zoom_t_target = 0.0
@@ -107,9 +108,9 @@ func _physics_process(delta: float) -> void:
 	
 	if should_move:
 		var force_dir := Vector2.from_angle(self.rotation).orthogonal()
-		var force_amount: float = 7067.0
+		var force_amount: float = PLAYER_SPEED_FAST
 		if GameState.player_mask != 0:
-			force_amount = 4000.0
+			force_amount = PLAYER_SPEED_SLOW
 		if cursor_distance < (gradualzone_radius):
 			force_amount *= clampf((cursor_distance - deadzone_radius)/(gradualzone_radius - deadzone_radius), 0.0, 1.0)
 		apply_central_force(force_amount * force_dir)
