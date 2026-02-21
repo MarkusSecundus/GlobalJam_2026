@@ -501,14 +501,16 @@ position = Vector2(1, 0.5)
 shape = SubResource("CapsuleShape2D_g2jcq")
 
 [node name="Mask" type="AnimatedSprite2D" parent="." unique_id=639301702]
-visible = false
 position = Vector2(0, 11)
 scale = Vector2(0.85156244, 0.8515624)
 sprite_frames = SubResource("SpriteFrames_pp8wu")
 autoplay = "default"
 frame_progress = 0.17686868
 
-[node name="MaskShapeTri" type="AnimatedSprite2D" parent="." unique_id=1047249197]
+[node name="MaskShapes" type="Node2D" parent="." unique_id=412537372]
+position = Vector2(0, -3)
+
+[node name="Tri" type="AnimatedSprite2D" parent="MaskShapes" unique_id=1047249197]
 visible = false
 position = Vector2(0, -6)
 scale = Vector2(1.137, 1.137)
@@ -516,7 +518,7 @@ sprite_frames = SubResource("SpriteFrames_84k71")
 autoplay = "default"
 frame_progress = 0.23107888
 
-[node name="MaskShapeSquare" type="AnimatedSprite2D" parent="." unique_id=679155572]
+[node name="Square" type="AnimatedSprite2D" parent="MaskShapes" unique_id=679155572]
 visible = false
 position = Vector2(0, -8)
 scale = Vector2(1.0515637, 1.0515636)
@@ -524,7 +526,7 @@ sprite_frames = SubResource("SpriteFrames_b4knd")
 autoplay = "default"
 frame_progress = 0.77270824
 
-[node name="MaskShapeCircle" type="AnimatedSprite2D" parent="." unique_id=1998630387]
+[node name="Circle" type="AnimatedSprite2D" parent="MaskShapes" unique_id=1998630387]
 visible = false
 position = Vector2(0, -5)
 scale = Vector2(1.042, 1.042)

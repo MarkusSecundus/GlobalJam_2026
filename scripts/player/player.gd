@@ -38,9 +38,9 @@ func change_mask(new_mask: int) -> void:
 	$mask_change_anim.play()
 	
 	#$Mask.visible            = GameState.player_mask != 0
-	$MaskShapeTri.visible    = GameState.player_mask & Game.Mask.TRI
-	$MaskShapeSquare.visible = GameState.player_mask & Game.Mask.SQUARE
-	$MaskShapeCircle.visible = GameState.player_mask & Game.Mask.CIRCLE
+	$MaskShapes/Tri.visible    = GameState.player_mask & Game.Mask.TRI
+	$MaskShapes/Square.visible = GameState.player_mask & Game.Mask.SQUARE
+	$MaskShapes/Circle.visible = GameState.player_mask & Game.Mask.CIRCLE
 	
 	var mask_now_visible = GameState.player_mask != 0
 	
@@ -77,6 +77,11 @@ func _process(delta: float) -> void:
 		
 	var zoom: float = 0.32 + 0.15 * ease(zoom_t, -2.5)
 	$Camera2D.zoom = Vector2(zoom, zoom)
+	
+	if GameState.player_mask != 0:
+		$MaskShapes/Tri.global_rotation = 0
+		$MaskShapes/Square.global_rotation = 0
+		$MaskShapes/Circle.global_rotation = 0
 
 func _physics_process(delta: float) -> void:
 	if GameState.is_player_dead:
