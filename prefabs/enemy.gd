@@ -116,6 +116,11 @@ func _process(delta: float) -> void:
 		aggro_cooldown = AGGRO_COOLDOWN_AFTER_ATTACK
 	
 	maybe_do_random_movement(delta)
+	
+	if detectable_shapes != 0:
+		$ShapeIndicators/Tri.global_rotation    = 0
+		$ShapeIndicators/Square.global_rotation = 0
+		$ShapeIndicators/Circle.global_rotation = 0
 
 
 func _on_player_detect_area_body_entered(body: Node2D) -> void:

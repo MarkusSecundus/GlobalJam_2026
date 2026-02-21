@@ -224,20 +224,19 @@ shape = SubResource("CircleShape2D_6n8dw")
 [node name="ShapeIndicators" type="Node2D" parent="." unique_id=1082216916]
 
 [node name="Tri" type="AnimatedSprite2D" parent="ShapeIndicators" unique_id=2039064650]
-position = Vector2(0, -34)
+position = Vector2(1, -40)
 scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_cfq72")
 autoplay = "default"
 
 [node name="Square" type="AnimatedSprite2D" parent="ShapeIndicators" unique_id=1025744116]
-position = Vector2(-34, 15.000002)
-rotation = -0.55769205
+position = Vector2(-36, 22)
 scale = Vector2(1.1875, 1.1875)
 sprite_frames = SubResource("SpriteFrames_r4vfc")
 autoplay = "default"
 
 [node name="Circle" type="AnimatedSprite2D" parent="ShapeIndicators" unique_id=657240448]
-position = Vector2(41, 9.000001)
+position = Vector2(42, 19)
 scale = Vector2(1.21875, 1.21875)
 sprite_frames = SubResource("SpriteFrames_7ajok")
 autoplay = "default"
