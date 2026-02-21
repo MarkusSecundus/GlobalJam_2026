@@ -482,10 +482,10 @@ script = ExtResource("1_4dohe")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1484938788]
 zoom = Vector2(0.4, 0.4)
-limit_left = -5000
-limit_top = -5000
-limit_right = 5000
-limit_bottom = 5000
+limit_left = -5500
+limit_top = -5500
+limit_right = 5500
+limit_bottom = 5500
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=1505488040]
 libraries/ = SubResource("AnimationLibrary_1txc5")
