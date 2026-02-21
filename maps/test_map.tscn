@@ -144,7 +144,6 @@ animations = [{
 script = ExtResource("1_7wt56")
 
 [node name="Background" parent="." unique_id=2009579252 instance=ExtResource("2_tiop4")]
-position = Vector2(1366, -1318)
 
 [node name="load_bearing_node" type="Node2D" parent="." unique_id=1878541658]
 
