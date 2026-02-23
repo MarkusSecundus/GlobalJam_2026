@@ -192,9 +192,9 @@ position = Vector2(896, -520)
 [node name="Enemy5" parent="." unique_id=745425875 instance=ExtResource("5_cabd0")]
 position = Vector2(-8, 3003)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1889071965]
+[node name="layer_compass" type="CanvasLayer" parent="." unique_id=1889071965]
 
-[node name="Control" type="Control" parent="CanvasLayer2" unique_id=628145795]
+[node name="Control" type="Control" parent="layer_compass" unique_id=628145795]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,121 +203,121 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_wd2vj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=376447545]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=376447545]
 position = Vector2(-31, 119)
 rotation = 1.8387308
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.9673702
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=671189858]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=671189858]
 position = Vector2(-2, 324)
 rotation = 1.7021849
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.39867845
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=240924885]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=240924885]
 position = Vector2(-5.0000076, 593)
 rotation = 1.3607833
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.95362294
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1221924949]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1221924949]
 position = Vector2(207, -14.999992)
 rotation = 2.8207064
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.17666775
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=320580054]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=320580054]
 position = Vector2(1294.9999, 66.999985)
 rotation = 4.3445225
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.05212627
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1332022068]
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1332022068]
 position = Vector2(1295.0001, 338)
 rotation = 4.559066
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.24949256
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1783923244]
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1783923244]
 position = Vector2(1311, 701)
 rotation = 5.2265477
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.30255464
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1591525120]
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1591525120]
 position = Vector2(429, -35)
 rotation = 3.2126253
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.5072557
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=363192617]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=363192617]
 position = Vector2(658, -36.999996)
 rotation = 3.2126253
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.31894436
 
-[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=173798706]
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=173798706]
 position = Vector2(851, -54)
 rotation = 3.1916761
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.68004215
 
-[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1221139941]
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1221139941]
 position = Vector2(1086.0001, -41.99997)
 rotation = 3.465763
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.61060154
 
-[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1590122111]
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1590122111]
 position = Vector2(961, 751)
 rotation = -6.248447
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.31626663
 
-[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=752949982]
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=752949982]
 position = Vector2(746, 701.99994)
 rotation = -6.2296834
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.46139687
 
-[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=357170546]
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=357170546]
 position = Vector2(562, 727.99994)
 rotation = -6.263361
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.19160903
 
-[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=59767068]
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=59767068]
 position = Vector2(378, 747)
 rotation = -6.1557975
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.8682093
 
-[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="CanvasLayer2/Control" unique_id=1096079994]
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="layer_compass/Control" unique_id=1096079994]
 position = Vector2(180, 768.00006)
 rotation = -6.1557975
 sprite_frames = SubResource("SpriteFrames_e0rxn")
 autoplay = "default"
 frame_progress = 0.23930117
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2046567294]
+[node name="layer_hud" type="CanvasLayer" parent="." unique_id=2046567294]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1298574837]
+[node name="Control" type="Control" parent="layer_hud" unique_id=1298574837]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -325,7 +325,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=802225626]
+[node name="RichTextLabel" type="RichTextLabel" parent="layer_hud/Control" unique_id=802225626]
 layout_mode = 1
 offset_left = 19.0
 offset_top = 9.0
@@ -340,7 +340,7 @@ theme_override_constants/shadow_offset_y = 1
 text = "XX/XX Infected"
 script = ExtResource("6_k1jtb")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1806612733]
+[node name="HBoxContainer" type="HBoxContainer" parent="layer_hud/Control" unique_id=1806612733]
 layout_direction = 3
 layout_mode = 0
 offset_left = 16.349976
@@ -349,17 +349,17 @@ offset_right = 528.35
 offset_bottom = 69.0
 script = ExtResource("7_svl6s")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=684583580]
+[node name="TextureRect" type="TextureRect" parent="layer_hud/Control/HBoxContainer" unique_id=684583580]
 layout_mode = 2
 texture = ExtResource("12_6emo8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=1016192482]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=1016192482]
 position = Vector2(36.872124, 93)
 scale = Vector2(0.6172314, 0.57785255)
 sprite_frames = SubResource("SpriteFrames_x0wvt")
 frame_progress = 0.047975037
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=114862359]
+[node name="RichTextLabel2" type="RichTextLabel" parent="layer_hud/Control" unique_id=114862359]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 74.7514
@@ -375,12 +375,12 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[1]"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=1863932158]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=1863932158]
 position = Vector2(36.751404, 132)
 scale = Vector2(0.6172314, 0.57785255)
 sprite_frames = SubResource("SpriteFrames_tiop4")
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=803714741]
+[node name="RichTextLabel3" type="RichTextLabel" parent="layer_hud/Control" unique_id=803714741]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 73.7514
@@ -396,12 +396,12 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[2]"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=992912787]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=992912787]
 position = Vector2(37.502808, 173)
 scale = Vector2(0.6172314, 0.57785255)
 sprite_frames = SubResource("SpriteFrames_thrmo")
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=228512846]
+[node name="RichTextLabel4" type="RichTextLabel" parent="layer_hud/Control" unique_id=228512846]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 73.502815
@@ -417,12 +417,12 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[3]"
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=204476906]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=204476906]
 position = Vector2(37.502808, 214)
 scale = Vector2(0.6172314, 0.57785255)
 sprite_frames = SubResource("SpriteFrames_8dvw1")
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=457699588]
+[node name="RichTextLabel5" type="RichTextLabel" parent="layer_hud/Control" unique_id=457699588]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 74.0
@@ -453,18 +453,18 @@ duration_seconds = 1.0
 ease = 1
 transition = 1
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=2128737819]
+[node name="layer_pause" type="CanvasLayer" parent="." unique_id=2128737819]
 
-[node name="PauseDialog" parent="CanvasLayer3" unique_id=1907803477 instance=ExtResource("15_ad6p3")]
+[node name="PauseDialog" parent="layer_pause" unique_id=1907803477 instance=ExtResource("15_ad6p3")]
 
-[node name="CanvasLayer4" type="CanvasLayer" parent="." unique_id=1188345117]
+[node name="layer_die" type="CanvasLayer" parent="." unique_id=1188345117]
 
-[node name="DeathDialog" parent="CanvasLayer4" unique_id=558535312 instance=ExtResource("16_qnwwd")]
+[node name="DeathDialog" parent="layer_die" unique_id=558535312 instance=ExtResource("16_qnwwd")]
 visible = false
 
-[node name="CanvasLayer5" type="CanvasLayer" parent="." unique_id=272041571]
+[node name="layer_win" type="CanvasLayer" parent="." unique_id=272041571]
 
-[node name="YouWin" parent="CanvasLayer5" unique_id=931655785 instance=ExtResource("18_6emo8")]
+[node name="YouWin" parent="layer_win" unique_id=931655785 instance=ExtResource("18_6emo8")]
 visible = false
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
