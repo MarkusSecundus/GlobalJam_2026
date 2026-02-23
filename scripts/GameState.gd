@@ -25,6 +25,8 @@ var player_has_won: bool:
 	get: return infected_points == infected_point_count and infected_point_count != 0
 	set(_val):pass
 
+var game_started: bool = false
+
 var player_mask: int = 0  # bitmask of Game.Mask values (see Game.gd)
 
 var infected_point_count: int = 0

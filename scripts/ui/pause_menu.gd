@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 	
 	if GameState.is_player_dead:
 		return
+		
+	if ! GameState.game_started:
+		return
 	
 	if Input.is_action_just_pressed("Pause"):
 		if get_tree().paused == true:
