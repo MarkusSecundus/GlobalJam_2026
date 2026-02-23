@@ -18,7 +18,7 @@ var hint_compass: Control
 func _enter_tree() -> void:
 	GameState.infected_point_count += 1
 	player = NodeUtils.get_descendant_of_type(get_tree().root, Player )
-	hint_compass = get_tree().root.get_node("Node2D/CanvasLayer2/Control")
+	hint_compass = get_tree().root.get_node("Node2D/layer_compass/Control")
 	pass # Replace with function body.
 
 func _exit_tree() -> void:
