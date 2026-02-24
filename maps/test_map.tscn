@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://4dcofeacha46" path="res://textures/life.webp" id="12_6emo8"]
 [ext_resource type="Script" uid="uid://ubonts5hn7fi" path="res://scripts/util/dialog_system/dialog_custom_actions/DialogAction_Fader.gd" id="12_u8v7t"]
 [ext_resource type="Texture2D" uid="uid://bfd831urwqje0" path="res://textures/type_triangle.png" id="13_tiop4"]
+[ext_resource type="Script" uid="uid://m6g562dheb2e" path="res://scripts/ui/input_binding.gd" id="14_6gtm4"]
 [ext_resource type="Texture2D" uid="uid://bp23m5awjgfqp" path="res://textures/type_square.png" id="14_lqwt6"]
 [ext_resource type="PackedScene" uid="uid://bwc1cyl16dnxq" path="res://ui/pause_dialog.tscn" id="15_ad6p3"]
 [ext_resource type="Texture2D" uid="uid://cripm7ucxmj4i" path="res://textures/type_circle.png" id="15_w0ppd"]
@@ -763,6 +764,9 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[1]"
+script = ExtResource("14_6gtm4")
+keyboard_text = "[1]"
+controller_text = "[Y]"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=1863932158]
 position = Vector2(36.751404, 132)
@@ -784,6 +788,9 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[2]"
+script = ExtResource("14_6gtm4")
+keyboard_text = "[2]"
+controller_text = "[X]"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=992912787]
 position = Vector2(37.502808, 173)
@@ -805,6 +812,9 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[3]"
+script = ExtResource("14_6gtm4")
+keyboard_text = "[3]"
+controller_text = "[A]"
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="layer_hud/Control" unique_id=204476906]
 position = Vector2(37.502808, 214)
@@ -826,6 +836,9 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "[4]"
+script = ExtResource("14_6gtm4")
+keyboard_text = "[4]"
+controller_text = "[B]"
 
 [node name="FadeAction" type="Node" parent="." unique_id=2070253419 node_paths=PackedStringArray("default_start")]
 script = ExtResource("10_wd2vj")

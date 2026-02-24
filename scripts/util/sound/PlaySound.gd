@@ -38,7 +38,7 @@ var _is_stopping_periodical_play_immediate : bool = false
 func stop_periodical_play_immediate()->void:
 	stop_periodical_play()
 	if _is_stopping_periodical_play_immediate && _current_player && _current_player.playing && (TimeUtils.seconds_elapsed < _last_play_timestamp + stream.get_length()):
-		var tw := SoundManager.StopPlayGradually(_current_player, immediate_stop_duration_seconds)
+		var tw :Tween= SoundManager.StopPlayGradually(_current_player, immediate_stop_duration_seconds)
 		_is_stopping_periodical_play_immediate = true
 		await tw.finished
 		_is_stopping_periodical_play_immediate = false

@@ -28,7 +28,7 @@ func _draw():
 func change_mask(new_mask: int) -> void:
 	assert(new_mask == Game.Mask.TRI or new_mask == Game.Mask.SQUARE or new_mask == Game.Mask.CIRCLE)
 	
-	var mask_intially_visible := GameState.player_mask != 0
+	var mask_intially_visible :bool= GameState.player_mask != 0
 	
 	if GameState.player_mask == new_mask:
 		GameState.player_mask = 0
@@ -84,6 +84,23 @@ func _process(delta: float) -> void:
 		$MaskShapes/Square.global_rotation = 0
 		$MaskShapes/Circle.global_rotation = 0
 
+enum InputMode{
+	MOUSE, CONTROLLER
+}
+
+var _input_mode : InputMode = InputMode.MOUSE:
+	get: return _input_mode
+	set(val):
+		if _input_mode == val: return
+		_input_mode = val
+		if val == InputMode.MOUSE:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		elif val == InputMode.CONTROLLER:
+			Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+		for bind :InputBinding in NodeUtils.get_descendants_of_type(get_tree().root, InputBinding):
+			bind._do_update(val)
+			
+
 func _physics_process(delta: float) -> void:
 	if GameState.is_player_dead:
 		return
@@ -92,6 +109,17 @@ func _physics_process(delta: float) -> void:
 		return;
 		
 	var target_facing_vec := get_global_mouse_position() - self.global_position
+	var controller_input := Vector2(Input.get_axis("JoyLeft", "JoyRight"), Input.get_axis("JoyUp", "JoyDown"))
+	
+	if controller_input != Vector2.ZERO:
+		_input_mode = InputMode.CONTROLLER
+	elif Input.get_last_mouse_velocity() != Vector2.ZERO:
+		_input_mode = InputMode.MOUSE
+	
+	if _input_mode == InputMode.CONTROLLER:
+		target_facing_vec = controller_input * gradualzone_radius
+			
+	
 	var cursor_distance := target_facing_vec.length()
 	if cursor_distance >= deadzone_radius:
 		# this is bad and stupid, but i can't do math rn
