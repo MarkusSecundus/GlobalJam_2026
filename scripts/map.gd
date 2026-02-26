@@ -6,3 +6,4 @@ func _on_child_entered_tree(node: Node) -> void:
 		GameState.infected_point_count = 0
 		GameState.game_screen_type = GameState.GameScreenType.IN_GAME
 		GameState.player_hp = Game.MAX_PLAYER_HP
+		GameState.player_mask = 0
