@@ -6,6 +6,8 @@ func _ready() -> void:
 	get_tree().paused = true
 	GameState.game_started = false
 	$"../../layer_hud".visible = false # Yeah fuck you
+	$"../ColorRect".visible = true
+	$"../InvisibleButtonSoThatClickAnywhereWorksForgiveMeJakub".visible = true
 	pass # Replace with function body.
 
 
@@ -19,4 +21,6 @@ func _on_button_pressed() -> void:
 	self.visible = false
 	GameState.game_started = true
 	$"../../layer_hud".visible = true
+	$"../ColorRect".visible = false
+	$"../InvisibleButtonSoThatClickAnywhereWorksForgiveMeJakub".visible = false
 	pass # Replace with function body.
